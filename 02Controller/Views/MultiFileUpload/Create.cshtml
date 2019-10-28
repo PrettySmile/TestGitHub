@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+</head>
+<body>
+    <form method="post" action="@Url.Action("Create")" enctype="multipart/form-data">
+        請選擇要上傳的檔案：
+        <br />
+        <div id="FileUpArea">
+
+        </div>
+        @*<input id="File1" name="photo" type="file" /><br />
+        <input id="File1" name="photo" type="file" /><br />
+        <input id="File1" name="photo" type="file" /><br />
+        <input id="File1" name="photo" type="file" /><br />
+        <input id="File1" name="photo" type="file" /><br />*@
+        <input id="addFile" type="button" value="增加一個檔案" />
+        <input id="Submit1" type="submit" value="上傳檔案" />
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+            crossorigin="anonymous"></script>
+    <script>
+        $('#addFile').click(function () {
+            $('#FileUpArea').append("<input id='File1' name='photo' type='file' /><br />");
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>第三次作業 音樂撥放器</title>
+    <style>
+        #ControlPanel>span {
+            cursor: pointer;
+            font-family: Webdings; /*windows提供的網頁用字體*/
+            font-size: 3rem; /*因為是字所以變大相素不會失真*/
+            border: 1px solid;
+            box-shadow: 3px 3px 7px black;
+        }
+    </style>
+</head>
+<body>
+    <!--<audio controls="controls" autoplay="autoplay">--><!--autoplay在行動裝置上無用，因為怕吃光wifi-->
+    <audio id="audio" controls="controls">
+        <source type="audio/mp3" src="music/a123.mp3" />
+    </audio>
+
+    <div id="ControlPanel">
+        <span id="play">4</span>
+        <span id="pause">;</span>
+    </div>
+
+
+    <script>
+        let audio = document.getElementById("audio");
+        let play = document.getElementById("play");
+        let pause = document.getElementById("pause");
+        play.addEventListener("click", playMusic);
+        pause.addEventListener("click", pauseMusic);
+
+        function playMusic() {
+            audio.play();
+        }
+
+        function pauseMusic() {
+            audio.pause();
+        }
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+﻿@model IEnumerable<ASPnet.Models.產品資料>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.產品)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.單位數量)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.單價)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.庫存量)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.已訂購量)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.安全存量)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.不再銷售)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.供應商.供應商1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.產品類別.類別名稱)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.產品)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.單位數量)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.單價)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.庫存量)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.已訂購量)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.安全存量)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.不再銷售)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.供應商.供應商1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.產品類別.類別名稱)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.產品編號 }) |
+            @Html.ActionLink("Details", "Details", new { id=item.產品編號 }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.產品編號 })
+        </td>
+    </tr>
+}
+
+</table>

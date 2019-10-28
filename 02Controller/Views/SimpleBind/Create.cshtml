@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>新增作業</title>
+</head>
+<body>
+
+    @*action兩種寫法*@
+    @*用@Url產生一個相對應的url，告知actoin名稱即可*@
+    @*action="/SimpleBind/Create"*@
+
+    <form method="post" action="@Url.Action("Create")">
+        <h3>產品新增作業</h3>
+        <div>
+
+            @*name定義成跟cs的actoin參數名稱一樣，自動會做繫結：簡單模型繫結*@
+
+            <p>編號：<input id="PId" name="PId" type="text" value="@ViewBag.PId" required /></p>
+            <p>品名：<input id="PName" name="PName" type="text" value="@ViewBag.PName" required /></p>
+            <p>單價：<input id="Price" name="Price" type="text" value="@ViewBag.Price" required /></p>
+            <p><input id="Submit1" type="submit" value="新增" /></p>
+        </div>
+
+        <hr />
+        @{
+            if (ViewBag.PId != null && ViewBag.PName != null && ViewBag.Price != null)
+            {
+                <p>完成產品資料新增</p>
+                <p>編號：@ViewBag.PId | 品名：@ViewBag.PName | 單價：@ViewBag.Price</p>
+            }
+        }
+
+    </form>
+</body>
+</html>

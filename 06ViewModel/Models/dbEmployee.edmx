@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="NorthwindModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="員工">
+          <Key>
+            <PropertyRef Name="員工編號" />
+          </Key>
+          <Property Name="員工編號" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="姓名" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="名" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="稱呼" Type="nvarchar" MaxLength="25" />
+          <Property Name="出生日期" Type="datetime" />
+          <Property Name="地址" Type="nvarchar" MaxLength="60" />
+          <Property Name="城市" Type="nvarchar" MaxLength="15" />
+          <Property Name="行政區" Type="nvarchar" MaxLength="15" />
+          <Property Name="職稱" Type="int" />
+        </EntityType>
+        <EntityType Name="職稱">
+          <Key>
+            <PropertyRef Name="職稱代碼" />
+          </Key>
+          <Property Name="職稱代碼" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="職稱" Type="nvarchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__員工__職稱__07C12930">
+          <End Role="職稱" Type="Self.職稱" Multiplicity="0..1" />
+          <End Role="員工" Type="Self.員工" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="職稱">
+              <PropertyRef Name="職稱代碼" />
+            </Principal>
+            <Dependent Role="員工">
+              <PropertyRef Name="職稱" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="NorthwindModelStoreContainer">
+          <EntitySet Name="員工" EntityType="Self.員工" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="職稱" EntityType="Self.職稱" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__員工__職稱__07C12930" Association="Self.FK__員工__職稱__07C12930">
+            <End Role="職稱" EntitySet="職稱" />
+            <End Role="員工" EntitySet="員工" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="NorthwindModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="NorthwindEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="職稱" EntityType="NorthwindModel.職稱" />
+          <EntitySet Name="員工" EntityType="NorthwindModel.員工" />
+          <AssociationSet Name="FK__員工__職稱__07C12930" Association="NorthwindModel.FK__員工__職稱__07C12930">
+            <End Role="職稱" EntitySet="職稱" />
+            <End Role="員工" EntitySet="員工" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="職稱">
+          <Key>
+            <PropertyRef Name="職稱代碼" />
+          </Key>
+          <Property Name="職稱代碼" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="職稱1" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="員工" Relationship="NorthwindModel.FK__員工__職稱__07C12930" FromRole="職稱" ToRole="員工" />
+        </EntityType>
+        <EntityType Name="員工">
+          <Key>
+            <PropertyRef Name="員工編號" />
+          </Key>
+          <Property Name="員工編號" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="姓名" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="名" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="稱呼" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="出生日期" Type="DateTime" Precision="3" />
+          <Property Name="地址" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="城市" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="行政區" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="職稱" Type="Int32" />
+          <NavigationProperty Name="職稱1" Relationship="NorthwindModel.FK__員工__職稱__07C12930" FromRole="員工" ToRole="職稱" />
+        </EntityType>
+        <Association Name="FK__員工__職稱__07C12930">
+          <End Type="NorthwindModel.職稱" Role="職稱" Multiplicity="0..1" />
+          <End Type="NorthwindModel.員工" Role="員工" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="職稱">
+              <PropertyRef Name="職稱代碼" />
+            </Principal>
+            <Dependent Role="員工">
+              <PropertyRef Name="職稱" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="NorthwindModelStoreContainer" CdmEntityContainer="NorthwindEntities">
+          <EntitySetMapping Name="職稱">
+            <EntityTypeMapping TypeName="NorthwindModel.職稱">
+              <MappingFragment StoreEntitySet="職稱">
+                <ScalarProperty Name="職稱1" ColumnName="職稱" />
+                <ScalarProperty Name="職稱代碼" ColumnName="職稱代碼" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="員工">
+            <EntityTypeMapping TypeName="NorthwindModel.員工">
+              <MappingFragment StoreEntitySet="員工">
+                <ScalarProperty Name="職稱" ColumnName="職稱" />
+                <ScalarProperty Name="行政區" ColumnName="行政區" />
+                <ScalarProperty Name="城市" ColumnName="城市" />
+                <ScalarProperty Name="地址" ColumnName="地址" />
+                <ScalarProperty Name="出生日期" ColumnName="出生日期" />
+                <ScalarProperty Name="稱呼" ColumnName="稱呼" />
+                <ScalarProperty Name="名" ColumnName="名" />
+                <ScalarProperty Name="姓名" ColumnName="姓名" />
+                <ScalarProperty Name="員工編號" ColumnName="員工編號" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="無" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

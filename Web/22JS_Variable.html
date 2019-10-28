@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+    <script>
+        var name;//宣告
+        name2 = 123;//初始化
+        name = "123";//初化
+        var name3 = true;//宣告時，就初始化
+        name = 456;
+        name2 = 456;
+
+        document.write(name + "<br>");
+        document.write(name2 + "<br>");
+        document.write(name3 + "<br>");
+        ////////////////////////////////////////////////
+
+
+
+        //數值(number)資料型態的分類
+        //不管幾進位，輸出都是10進位！！
+        a = 123;//10進位整數
+        document.write("a=" + a + "<br>");
+        a = 0123;//8進位整數，第一個數字為0，代表八進位
+        document.write("a=" + a + "<br>");
+        a = 0786;//10進位整數，雖然第一個數字為0，但因為有數字8。
+        document.write("a=" + a + "<br>");
+        a = 0x786;//16進位
+        document.write("a=" + a + "<br>");
+
+
+        //這麼多表示方法，是為了計算
+        //Ex:2進位與10進位的計算速度是不同的！
+        a = 0.0005;//浮點數
+        document.write("a=" + a + "<br>");
+        a = 5e-4;//浮點數
+        document.write("a=" + a + "<br>");
+        
+
+    </script>
+</body>
+</html>

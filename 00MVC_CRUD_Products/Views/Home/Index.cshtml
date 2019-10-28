@@ -1,0 +1,65 @@
+﻿@model IEnumerable<_00MVC_CRUD_Products.Models.tProduct>
+
+@{
+    ViewBag.Title = "產品列表";
+}
+
+<h2>產品列表</h2>
+
+<p>
+    @Html.ActionLink("新增產品資料", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            編號
+        </th>
+        <th>
+            產品名稱
+            @*@Html.DisplayNameFor(model => model.fName)*@
+        </th>
+        <th>
+            價格
+            @*@Html.DisplayNameFor(model => model.fPrice)*@
+        </th>
+        <th>
+            圖示
+            @*@Html.DisplayNameFor(model => model.fImg)*@
+        </th>
+        <th>
+            商品管理
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @item.fId
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fPrice)
+        </td>
+        <td>
+            @if (item.fImg == "")
+            {
+                <h3>無圖示</h3>
+            }
+            else
+            {
+                <img src="~/images/@item.fImg" width="150" />
+            }
+
+            @*@Html.DisplayFor(modelItem => item.fImg)*@
+        </td>
+        <td>
+            @Html.ActionLink("編輯", "Edit", new { fId=item.fId }) |
+            @*@Html.ActionLink("看詳細資料", "Details", new { id=item.fId }) |*@
+            @Html.ActionLink("刪除", "Delete", new { fId=item.fId },new { onClick="return confirm('您確定要刪除嗎??')"})
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,13 @@
+﻿@helper GlobalScoreCheck(int math, int eng, int chi)
+{
+    int avg = (math + eng + chi) / 3;
+    if (avg >= 60)
+    {
+        @:及格
+    }
+    else
+    {
+        @:不及格
+    }
+}
+

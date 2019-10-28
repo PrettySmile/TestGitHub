@@ -1,0 +1,32 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>身分證字號合法性驗證</title>
+    <style>
+        .container{
+            width:1000px;
+            margin:auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action="@Url.Action("checkIDCard")" method="post"> <!--Index不能用單引號-->
+            <!--自動對應到controller action-->
+            <input name="idCard" type="text" /> <!--name的id跟controller的參數一樣，可直接傳遞-->
+            <input id="Submit1" type="submit" value="送出" />
+        </form>
+
+        @{
+        <h2>@ViewBag.Result</h2>
+        }
+    </div>
+</body>
+</html>

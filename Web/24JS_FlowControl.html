@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+    <script>
+        var strGender = "男";
+        let b = 1;
+        const PI = 3.1415926;
+
+        //流程控制---------------------
+        //條件控制
+        if (strGender == "男") {
+            document.write("先生您好<br/>");
+        }
+
+        //二選一的條件控制
+        if (strGender == "男") {
+            document.write("先生您好<br/>");
+            document.write("小歡迎使用男版JavaScript!!");
+        } else {
+            document.write("小姐您好<br/>");
+            document.write("小歡迎使用女版JavaScript!!");
+        }
+
+        //多條件控制
+        var a = 1;
+        if (a == 1) {
+
+        } else if (a == 2) {
+
+        } else if (a == 3) {
+
+        } else {
+
+        }
+        document.write("<hr/>");
+        //////////////////////////////////////////////
+        //區分等第
+        //90分以上為優等，80~89分為甲等，70~79分為乙等
+        //60~69分為丙等，60分以下為丁等
+        var score = 89;
+        //用if來判斷score的值
+        if (score >= 90) {
+            document.write("優等");
+        } else if (score < 90 && score >= 80) {
+            document.write("甲等");
+        } else if (score < 80 && score >= 70) {
+            document.write("乙等");
+        } else if (score < 70 && score >= 60) {
+            document.write("丙等");
+        } else {
+            document.write("丁等");
+        }
+    </script>
+</body>
+</html>

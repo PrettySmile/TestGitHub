@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        .h1:hover{/*hover事件-光棒效果*/ /*.是指class名稱*/
+            /*border:1px solid;*/
+            background-color:hotpink;
+        }
+
+        h1:hover{
+            background-color:yellow;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="h1">Welcome My Homepage!!</h1>
+    <h2>Welcome My Homepage!!</h2>
+    <h3>Welcome My Homepage!!</h3>
+    <h4>Welcome My Homepage!!</h4><!--h4=12點大小+粗體-->
+    <h5>Welcome My Homepage!!</h5>
+    <h6>Welcome My Homepage!!</h6>
+
+
+
+    <h1>Welcome My Homepage!!</h1><h1>Welcome My Homepage!!</h1>
+    Welcome My Homepage!!
+    Welcome My Homepage!!<!--12點大小-->
+
+    <script>
+        for (var i = 1; i <= 500; i++) {
+            for (var j = 1; j <= 6; j++) {
+                document.write('<h'+j+' class="h1">第'+i+'組Welcome My Homepage!!</h'+j+'>');
+            }
+        }
+    </script>
+</body>
+</html>

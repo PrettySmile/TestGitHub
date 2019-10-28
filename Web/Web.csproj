@@ -1,0 +1,230 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A8D6C254-72BB-4523-ABCF-4186A11AB923}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Web</RootNamespace>
+    <AssemblyName>Web</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="01Test.html" />
+    <Content Include="02Header.html" />
+    <Content Include="03Pre.html" />
+    <Content Include="04hr.html" />
+    <Content Include="05font.html" />
+    <Content Include="06division.html" />
+    <Content Include="07item.html" />
+    <Content Include="08a.html" />
+    <Content Include="09images.html" />
+    <Content Include="17CSS_table_selector.html" />
+    <Content Include="10table.html" />
+    <Content Include="10table_test.html" />
+    <Content Include="11form.html" />
+    <Content Include="12CSS_font.html" />
+    <Content Include="13CSS_text.html" />
+    <Content Include="14CSS_color.html" />
+    <Content Include="15CSS_table.html" />
+    <Content Include="16CSS_Selector.html" />
+    <Content Include="18CSS_table_selector2.html" />
+    <Content Include="19CSS_Ava.html" />
+    <Content Include="19CSS_Position.html" />
+    <Content Include="21JS_Test.html" />
+    <Content Include="22JS_Variable.html" />
+    <Content Include="23JS_Statement.html" />
+    <Content Include="24JS_FlowControl.html" />
+    <Content Include="25JS_FlowControl2.html" />
+    <Content Include="26JS_FlowControl3.html" />
+    <Content Include="27JS_FlowControl_For2.html" />
+    <Content Include="28JS_FlowControl_While.html" />
+    <Content Include="29JS_PasswordGame.html" />
+    <Content Include="30JS_Func_Object.html" />
+    <Content Include="31JS_Func2.html" />
+    <Content Include="32JS_HW3.html" />
+    <Content Include="33jQuery_First.html" />
+    <Content Include="35jQuery_Selector.html" />
+    <Content Include="36jQuery_Selector2.html" />
+    <Content Include="37jQuery_DOM.html" />
+    <Content Include="38jQuery_GoogleAPI.html" />
+    <Content Include="39jQuery_Event.html" />
+    <Content Include="41jQuery_MouseEvent.html" />
+    <Content Include="42jQuery_KeyboardEvent.html" />
+    <Content Include="45jQuery_Fade.html" />
+    <Content Include="44_jQuery_Slide.html" />
+    <Content Include="43jQuery_ShowHide.html" />
+    <Content Include="46jQuery_Basic_Animate.html" />
+    <Content Include="48Ajax_Json.html" />
+    <Content Include="Homework\A\images\IMG_8360.JPG" />
+    <Content Include="Homework\A\resume.html" />
+    <Content Include="Homework\B\images\bottom.jpg" />
+    <Content Include="Homework\B\images\left.jpg" />
+    <Content Include="Homework\B\images\right.jpg" />
+    <Content Include="Homework\B\images\top.jpg" />
+    <Content Include="Homework\B\index.html" />
+    <Content Include="Homework\C\fonts\webdings.svg" />
+    <Content Include="Homework\C\index.html" />
+    <Content Include="Homework\C\player.js" />
+    <Content Include="Homework\C\playerStyle.css" />
+    <Content Include="Homework\C\sound\方大同-NothingsGonnaChangeMyLoveForYou.mp3" />
+    <Content Include="Homework\D\animate\ball.gif" />
+    <Content Include="Homework\D\animate\ding.gif" />
+    <Content Include="Homework\D\animate\pica.gif" />
+    <Content Include="Homework\D\animate\pokemonBG.png" />
+    <Content Include="Homework\D\index.html" />
+    <Content Include="Homework\D\sound\PokemonGo.mp3" />
+    <Content Include="Homework\D\sound\PokemonGo2.mp3" />
+    <Content Include="Homework\D\sound\Reflection.mp3" />
+    <Content Include="Homework\E\index1.html" />
+    <Content Include="Homework\E\index2.html" />
+    <Content Include="Homework\GoogleMap\index.html" />
+    <Content Include="Homework\SoundPlayer\index.html" />
+    <Content Include="Homework\C\sound\汪蘇瀧-有點甜.mp3" />
+    <Content Include="Homework\C\sound\鄧紫棋-光年之外.mp3" />
+    <Content Include="HyperLink\04hr.html" />
+    <Content Include="images\ad.jpg" />
+    <Content Include="images\banner1.jpg" />
+    <Content Include="images\banner2.jpg" />
+    <Content Include="images\bottom.jpg" />
+    <Content Include="images\car.png" />
+    <Content Include="images\Chrysanthemum.jpg" />
+    <Content Include="images\Desert.jpg" />
+    <Content Include="images\Hydrangeas.jpg" />
+    <Content Include="images\img\Img_test.html" />
+    <Content Include="images\Jellyfish.jpg" />
+    <Content Include="images\Koala.jpg" />
+    <Content Include="images\left.jpg" />
+    <Content Include="images\Lighthouse.jpg" />
+    <Content Include="images\Penguins.jpg" />
+    <Content Include="images\right.jpg" />
+    <Content Include="images\top.jpg" />
+    <Content Include="images\Tulips.jpg" />
+    <Content Include="music\a123.mp3" />
+    <Content Include="MyData.json" />
+    <Content Include="MyData2.json" />
+    <Content Include="Homework\E\MyData.json" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="34jQuery_CSS.html" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Homework\C\fonts\webdings.eot" />
+    <Content Include="Homework\C\fonts\webdings.ttf" />
+    <Content Include="Homework\C\fonts\webdings.woff" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Homework\SoundPlayer\sound\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49457</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:49457/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>此專案參考這部電腦上所缺少的 NuGet 套件。請啟用 NuGet 套件還原，以下載該套件。如需詳細資訊，請參閱 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的檔案是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

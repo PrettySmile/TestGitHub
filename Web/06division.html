@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!-- 自成block算不算一個區域div？一起探討-->
+    <!--margin邊界與邊界的距離；兩物件邊界距離-->
+    <!--padding內容到邊界距離-->
+</head>
+<body>
+
+    <h1 style="background-color:yellow;">a</h1><!--沒內容不代表不存在，只是看不見===>即便沒內容寬度仍存在，只是因為沒高度--><!--h1變大、變粗、自成段落、有空白行margin-->
+
+    <hr />
+
+
+
+
+
+    <div style="background-color:aqua">
+        <!--段跟段之間，沒有空白行margin--><!--div的margin是0-->
+        a
+    </div>
+    <div style="background-color:chartreuse">
+        鴻海創辦人郭台銘在總統初選落敗，後 續動向備受關注。雖然郭台銘日前已經 宣示不再回鴻海，但昨（17）日晚報仍出現署名股東刊登的廣告
+    </div>
+    <div style="background-color:crimson">
+        a
+    </div>
+
+    <hr />
+
+
+
+
+    <p style="background-color:pink">
+        <!--段落用標籤--><!--段跟段之間，有空白行margin-->
+        a
+    </p>
+    <p style="background-color:antiquewhite">
+        鴻海創辦人郭台銘在總統初選落敗，後 續動向備受關注。雖然郭台銘日前已經 宣示不再回鴻海，但昨（17）日晚報仍出現署名股東刊登的廣告
+    </p>
+    <p style="background-color:cornflowerblue">
+        a
+    </p>
+
+    <hr />
+
+
+
+
+
+    <span style="background-color:darkgray">
+        <!--沒有自成區域，且padding是0，-->
+        <!--背景色只作用在有字的地方-->
+        鴻海創辦人郭台銘在總統初選落敗，後
+    </span>
+    <span style="background-color:aquamarine">
+        續動向備受關注。雖然郭台銘日前已經
+    </span>
+    <span style="background-color:brown">
+        宣示不再回鴻海，但昨（17）日晚報仍出現署名股東刊登的廣告
+    </span>
+
+
+
+</body>
+</html>

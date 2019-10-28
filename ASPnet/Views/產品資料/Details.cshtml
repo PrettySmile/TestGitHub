@@ -1,0 +1,90 @@
+﻿@model ASPnet.Models.產品資料
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>產品資料</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.產品)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.產品)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.單位數量)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.單位數量)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.單價)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.單價)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.庫存量)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.庫存量)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.已訂購量)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.已訂購量)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.安全存量)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.安全存量)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.不再銷售)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.不再銷售)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.供應商.供應商1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.供應商.供應商1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.產品類別.類別名稱)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.產品類別.類別名稱)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.產品編號 }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

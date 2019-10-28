@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+    <script>
+        var a = 10;
+        a = 20;//20
+        a = a + 10;//30
+        a += 5;//35
+        a -= 8;//27
+        a *= 10;//270
+        a /= 27;//10
+
+        a++;//11
+        a--;//10
+        document.write(a+"<br>");
+        ////////////////////////////////
+
+
+        //練習
+        var a = 10, b = 20;
+        var a = 9539999999999999992, b = 12599999999999997;
+
+        //var c;
+        //c = a;
+        //a = b;
+        //b = c;
+
+        //a = [b, b = a][0];//[20,10]        
+
+        //[a, b] = [b, a];
+
+        //a = [a, b];
+        //b = a[0];
+        //a = a[1];
+
+        //a = { a: a, b: b };
+        //b = a.a;
+        //a = a.b;
+
+        //a = a ^ b;
+        //console.log(a);//30
+        //b = a ^ b;
+        //console.log(b);//10
+        //a = a ^ b;
+        //console.log(a);//20
+
+
+        //a = a * b;
+        //b = a / b;
+        //a = a / b;
+
+        //a = a + b;
+        //b = a - b;
+        //a = a - b;
+
+        document.write("a=" + a + ",b=" + b + "<hr/>");
+
+
+        ////////////////////////////////////////////////////////////////////////
+        var strName = "Jack", intNumber = 12345, blnGender = true;
+        var result;
+
+        result = strName + blnGender;
+        document.write(result + "<br/>");//Jacktrue
+        document.write(typeof (result) + "<br/>");//string
+
+        result = blnGender + strName;
+        document.write(result + "<br/>");//trueJack
+        document.write(typeof (result) + "<br/>");//string
+
+
+        result = strName + intNumber;
+        document.write(result + "<br/>");//Jack12345
+        document.write(typeof (result) + "<br/>");//string
+
+        result = intNumber + strName;//資料型態隱含轉換
+        document.write(result + "<br/>");//12345Jack
+        document.write(typeof (result) + "<br/>");//string
+
+        result = intNumber + blnGender;
+        document.write(result + "<br/>");//12346
+        document.write(typeof (result) + "<br/>");//number
+
+        result = intNumber + blnGender;
+        document.write(result + "<br/>");//12346
+        document.write(typeof (result) + "<br/>");//number
+
+        result = blnGender + blnGender;
+        document.write(result + "<br/>");//2
+        document.write(typeof (result) + "<br/>");//number
+
+
+        document.write(typeof (blnGender) + "<hr/>");//boolean
+        ////////////////////////////////////////////////////////////
+
+        document.write(parseInt(3.2) + "<br/>");//3
+        document.write(parseInt("3.2") + "<br/>");//3
+        document.write(parseInt("3qaz") + "<br/>");//3
+        document.write(parseInt("qaz3") + "<br/>");//NaN=>Not a number
+        document.write(parseInt("3 page") + "<br/>");//3
+        document.write(parseInt("18ff", 16) + "<br/>");//6399
+        document.write(parseInt("18ff",10)+"<br/>");//18
+        document.write(parseInt("18ff", 8) + "<br/>");//1
+        document.write(parseInt("ttyyuuff") + "<br/>");//NaN
+
+        document.write(parseFloat("3.2") + "<br/>");//3.2
+        document.write(parseFloat("aaaa3.2") + "<hr/>");//NaN
+        //////////////////////////////////////////////////////////////////
+
+        document.write((5 > 3) + "<br/>");//true        
+        document.write(eval(5 > 3) + "<br/>");//true
+        document.write(eval("aaa=1000") + "<br/>");//1000
+
+    </script>
+</body>
+</html>

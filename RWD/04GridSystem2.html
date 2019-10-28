@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        .col1 {
+            background-color: aquamarine;
+        }
+
+        .col2 {
+            background-color: brown;
+        }
+
+        .col3 {
+            background-color: cadetblue;
+        }
+
+        .col4 {
+            background-color: chartreuse;
+        }
+
+        .col5 {
+            background-color: cyan;
+        }
+
+        .col6 {
+            background-color: darkgray;
+        }
+
+        .col7 {
+            background-color: darkseagreen;
+        }
+
+        .col8 {
+            background-color: gold;
+        }
+
+        .col9 {
+            background-color: fuchsia;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>不設定寬(自動平均分配)</h3>
+        <div class="row">
+            <!--小於md寬度時，會並排-->
+            <div class="col3 col-md">Col3</div>
+            <div class="col4 col-md">Col4</div>
+            <div class="col5 col-md">Col5</div>
+        </div>
+        <div class="row">
+            <div class="col3 col-md">Col3</div>
+            <div class="col4 col-md">Col4</div>
+            <div class="col5 col-md">Col5</div>
+            <div class="col6 col-md">Col5</div>
+            <div class="col7 col-md">Col5</div>
+        </div>
+
+        <hr />
+
+        <h3>只設定某些寬(其他自動平均分配)</h3>
+        <div class="row">
+            <div class="col3 col-md">Col3</div>
+            <div class="col4 col-md-5">Col4</div>
+            <div class="col5 col-md">Col5</div>
+        </div>
+        <div class="row">
+            <div class="col3 col-md">Col3</div>
+            <div class="col4 col-md-2">Col4</div>
+            <div class="col5 col-md">Col5</div>
+            <div class="col6 col-md">Col5</div>
+            <div class="col7 col-md-5">Col5</div>
+        </div>
+
+        <hr />
+
+        <h3>動態調整寬度</h3>
+        <div class="row">
+            <div class="col3 col-md">Col3</div>
+            <div class="col4 col-md">Col4 dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</div>
+            <div class="col5 col-md">Col5</div>
+        </div>
+        <p></p>
+        <div class="row">
+            <div class="col1 col-md">Col3</div>
+            <!--auto 依文字內容長大，不考慮旁邊欄位-->
+            <div class="col2 col-md-auto">Col4 dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</div>
+            <div class="col3 col-md">Col5</div>
+        </div>
+
+        <hr />
+
+        <h3>等寬多行</h3>
+        <div class="row">
+            <div class="col3 col-md">Col3</div>
+            <!--auto 依文字內容長大，不考慮旁邊欄位-->
+            <div class="col4 col-md-auto">Col4 aaaaa</div>
+            <!--w-75，比例的意思75%-->
+            <div class="col5 w-75">Col5</div>
+            <div class="col7 col-md">Col5</div>
+        </div>
+
+        <hr />
+        <h3>超過12，無法呈現一排</h3>
+        <div class="row">
+            <!--5+4+4，超過12，所以無法呈現一排-->
+            <div class="col3 col-md-5">Col3</div>
+            <div class="col4 col-md-4">Col4</div>
+            <div class="col5 col-md-4">Col5</div>
+        </div>
+
+    </div>
+</body>
+</html>

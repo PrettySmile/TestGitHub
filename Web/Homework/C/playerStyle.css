@@ -1,0 +1,146 @@
+﻿body {
+}
+
+@font-face {
+    font-family: 'MyFont';
+    src: url('fonts/webdings.eot') format('embedded-opentype');
+}
+
+@font-face {
+    font-family: 'MyFont';
+    src: url('fonts/webdings.svg') format('svg');
+}
+
+@font-face {
+    font-family: 'MyFont';
+    src: url('fonts/webdings.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'MyFont';
+    src: url('fonts/webdings.woff') format('woff');
+}
+
+table {
+    clear: both;
+    border: 5px double #810a0a;
+    margin: auto;
+    text-align: center;
+    background-color: #fbbfbf;
+}
+
+    table tr:first-child td:first-child {
+        background-color: #f8d3d3;
+    }
+
+    table tr:first-child td:last-child {
+    }
+
+    table tr:last-child td {
+        background-color: #ffa2a2;
+    }
+
+#controlPanel > span {
+    cursor: pointer;
+    font-family: MyFont;
+    font-size: 3rem;
+    border: 1px solid;
+    box-shadow: 3px 3px 7px black;
+    user-select: none;
+}
+
+#btnSoundProgressBar{
+    width:100%;
+    -webkit-appearance:none;
+    outline:none;
+    background-color:#3c0404;
+    height:10px;
+    cursor:pointer;
+}
+
+    #btnSoundProgressBar::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        -webkit-align-content: center;
+        align-content: center;
+        width: 15px;
+        height: 15px;
+        background-color: orange;
+        cursor: pointer;
+        transition: .3s;
+    }
+
+
+    #btnSoundProgressBar::-webkit-slider-thumb:hover {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+    }
+
+#btnSoundList {
+    background-color: #810a0a;
+    color: white;
+    width: 550px;
+    font-size: 16px;
+}
+
+#btnVolumeRange {
+    width: 50%;
+    -webkit-appearance: none;
+    outline: none;
+}
+
+    #btnVolumeRange::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 30px;
+        height: 10px;
+        background-color: black;
+        border-radius: 20%;
+    }
+
+#txtVolume {
+    width: 30px;
+    text-align: center;
+    background-color: #810a0a;
+    color: white;
+    font-size: 16px;
+}
+
+#book div {
+    overflow: auto;
+}
+
+#sBook, #tBook {
+    width: 200px;
+    height: 100px;
+}
+
+#btnUpdateBook {
+    width: 200px;
+}
+
+input[type='button'] {
+    width: 80px;
+    font-size: 14px;
+    font-weight: 900;
+}
+
+.show {
+    color: #810a0a;
+}
+
+.hide {
+    color: black;
+}
+
+.hideDisplay {
+    display: none;
+}
+
+.rem3 {
+    font-size: 3rem;
+}
+
+.rem2 {
+    font-size: 2rem;
+}

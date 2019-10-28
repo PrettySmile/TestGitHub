@@ -1,0 +1,52 @@
+﻿@{
+    ViewBag.Title = "學生新增";
+}
+
+<h2>學生新增</h2>
+
+<form method="post" action="@Url.Action("Create")">
+
+    <div class="form-horizontal">
+        <hr />
+
+        <div class="form-group">
+            <span class="control-label col-md-2">學號</span>
+            <div class="col-md-10">
+                <input type="text" id="fStuId" name="fStuId" class="form-control" required />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <span class="control-label col-md-2">姓名</span>
+            <div class="col-md-10">
+                <input type="text" id="fName" name="fName" class="form-control" required />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <span class="control-label col-md-2">信箱</span>
+            <div class="col-md-10">
+                <input type="email" id="fEmail" name="fEmail" class="form-control" required />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <span class="control-label col-md-2">成績</span>
+            <div class="col-md-10">
+                <input type="number" id="fScore" name="fScore" class="form-control" min="0" max="100" required />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="新增" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    @Html.ActionLink("返回列表", "Index")
+</div>
+
+

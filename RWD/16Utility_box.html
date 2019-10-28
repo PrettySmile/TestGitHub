@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        span {
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 bg-dark">
+                <span class="border">　</span>
+                <span class="border-right">　</span>
+                <span class="border-top">　</span>
+                <span class="border-bottom">　</span>
+                <span class="border-left">　</span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <span class="border border-danger">　</span>
+                <span class="border-primary border-bottom">　</span>
+
+            </div>
+        </div>
+        <hr />
+        <!--圖有自己的長寬，為什麼縮放會變小變大呢？-->
+        不用設width是100%，他會有相應的變化
+        <div class="row">
+            <img src="Koala.jpg" class="col-md-2 col-sm-4 col-6 rounded" /> <!--塞滿/填滿-->
+            <img src="Koala.jpg" class="col-md-2 col-sm-4 col-6 rounded-top" /> 
+            <img src="Koala.jpg" class="col-md-2 col-sm-4 col-6 rounded-left" />
+            <img src="Koala.jpg" class="col-md-2 col-sm-4 col-6 rounded-circle" />
+            <img src="Koala.jpg" class="col-md-2 col-sm-4 col-6 rounded-pill" />
+            <img src="Koala.jpg" class="col-md-2 col-sm-4 col-6 img-thumbnail" /> <!--圖的外面有個圓角距型的白框線-->
+        </div>
+
+        <hr />
+        <!--p:padding
+        mb-margin bottom-->
+        <div class="p-3 mb-3 rounded shadow-none bg-warning">No shadow</div>
+        <div class="p-3 mb-3 rounded shadow-sm bg-white">Small shadow</div> <!--用斷點，設定陰影大小的意思-->
+        <div class="p-3 mb-3 rounded shadow bg-light">Regular shadow</div>
+        <div class="p-3 mb-3 rounded shadow-lg bg-light">Larger shadow</div>
+    </div>
+
+</body>
+</html>

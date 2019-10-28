@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+    <!--<audio controls="controls">
+        <source src="sound/%e6%b1%aa%e8%98%87%e7%80%a7-%e6%9c%89%e9%bb%9e%e7%94%9c.mp3" type="audio/mpeg" />
+    </audio>-->
+
+    <input id="btnPlay" type="button" value="button" />播放
+    <input id="btnStop" type="button" value="button" />停止
+    <input id="btnPause" type="button" value="button" />暫停
+    <input id="btnPre" type="button" value="button" />上一首
+    <input id="btnNext" type="button" value="button" />下一首
+
+    <!--<audio id="soundPlayer" preload="auto" autoplay muted>
+        <source type="audio/mpeg" src="sound/汪蘇瀧-有點甜.mp3" />
+        <source type="audio/mpeg" src="sound/鄧紫棋-光年之外.mp3" />
+        瀏覽器不支援音效檔所顯示的訊息
+    </audio>-->
+
+
+
+    <script>
+        var audio = document.getElementById("soundPlayer");
+        var btnPlay = document.getElementById("btnPlay");
+        var btnStop = document.getElementById("btnStop");
+        var btnPause = document.getElementById("btnPause");
+
+        //btnPlay.addEventListener("click", play);
+        //btnStop.addEventListener("click", stop);
+        //btnPause.addEventListener("click", pause);
+
+
+        function play() {
+            console.log("1");
+            audio.play();
+            //var playPromise = audio.play();
+            //console.log(playPromise);
+            //if (playPromise !== undefined) {
+            //    playPromise.then(_ => {
+            //        // 这个时候可以安全的暂停
+            //        onsole.log("1");
+            //        video.pause();
+            //    }).catch(error => {
+            //        console.log("2");
+            //    });
+            //}
+            //function stop() {
+            //    audio.stop();
+            //}
+            //function pause() {
+            //    audio.pause();
+            //}
+        };
+
+        function stop() {
+            audio.stop();
+        }
+
+        function pause() {
+            audio.pause();
+        }
+
+        window.onload = function () {
+            ////加載audio的七個順序event
+            //loadstart
+            //durationchange
+            //loadedmetadata
+            //loadeddata
+            //progress
+            //canplay
+            //canplaythrough
+
+            var soundList = ["汪蘇瀧-有點甜", "鄧紫棋-光年之外"];
+
+            var promise = new Promise(function (resolve, reject) {
+                var xhr = new XMLHttpRequest();
+                //for (var i = 0; i < soundList.length; i++) {
+                xhr.addEventListener("load", function () {
+                    resolve();
+                });
+                xhr.open("GET", "sound/" + soundList[0] + ".mp3");
+                xhr.send();
+                //}
+
+
+            });
+            promise.then(function (value) {
+                console.log("ok");
+
+                var audio = document.createElement("audio");
+                audio.src = "sound/" + soundList[0] + ".mp3";
+                document.body.appendChild(audio);
+                audio.addEventListener("canplay", function () {
+                    console.log("canplay");
+                    audio.play();
+                });
+            });
+            promise.catch(function () {
+                console.log("error");
+            });
+
+
+            ////audio.controls = 'controls';
+            ////audio.type = "audio/mpeg";
+
+        }
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        #tb1{
+            margin:auto;
+            border:3px double;
+            border-bottom:10px dotted red;
+            width:300px;
+            height:120px;
+        }
+        td,th, .h1{/*三個都用*/
+            border:1px solid;
+        }
+        #tb2 td, #tb2 th{/*從#a開始算往下不管幾代階層，只要是b都選擇*/
+                color:blue;
+        }
+        #tb1>thead th{/*從tb1裡面的thead中，找th*/ /*>往下一層的意思*/
+            border:5px solid;
+        }
+        /*↓容器有問題，正常來說加號+只選1個，蚯蚓號~代表選好幾個*/
+        /*#tb1>tbody>tr+tr~tr>td{
+            border: 5px solid green;
+        }*/
+        /*問題解法如下，透過使用first-child*/
+        #tb1>tbody>tr:first-child+tr>td:first-child+td{
+            border: 5px solid green;
+        }
+        a:link{/*link的狀態*/
+            color:forestgreen;
+            text-decoration:none;
+        }
+        a:active{/*active的狀態*/
+            color:blue;       /*!!!!!!!!!!!!!注意藍色會被visited事件蓋過，甚至是hover蓋過!!!!!!!!!!*/
+            font-weight:900;
+        }
+        a:visited{/*link的狀態*/
+            color:brown;
+            text-decoration:underline;
+        }
+        a:hover{/*滑鼠移過去的時候*/
+                font-size:2rem;
+                background-color:yellow;
+                color:red;
+        }
+    </style>
+</head>
+<body>
+    <div class="h1">Welcome!!!</div>
+
+    <a href="https://www.google.com.tw/">前往Google!!</a>
+
+    <div id="container">
+        <h1 id="h1">a</h1>
+        <h1 id="h2">b</h1>
+        <h1 id="h3">c</h1>
+    </div>
+
+    <table id="tb1">
+        <tfoot>
+            <tr>
+                <th colspan="3">製表人：笑嘻嘻</th>
+            </tr>
+        </tfoot>
+        <tbody>
+            <tr>
+                <td>張三</td>
+                <td>85</td>
+                <td>90</td>
+            </tr>
+            <tr>
+                <td>李四</td>
+                <td>78</td>
+                <td>98</td>
+            </tr>
+            <tr>
+                <td>王五</td>
+                <td>85</td>
+                <td>88</td>
+            </tr>
+            <tr>
+                <td>王五</td>
+                <td>85</td>
+                <td>88</td>
+            </tr>
+            <tr>
+                <td>王五</td>
+                <td>85</td>
+                <td>88</td>
+            </tr>
+        </tbody>
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>國文</th>
+                <th>數學</th>
+            </tr>
+        </thead>
+
+        <caption>成績單</caption>
+    </table>
+
+
+
+
+    <table id="tb2">
+        <tfoot>
+            <tr>
+                <th colspan="3">製表人：笑嘻嘻</th>
+            </tr>
+        </tfoot>
+        <tbody>
+            <tr>
+                <td>張三</td>
+                <td>85</td>
+                <td>90</td>
+            </tr>
+            <tr>
+                <td>李四</td>
+                <td>78</td>
+                <td>98</td>
+            </tr>
+            <tr>
+                <td>王五</td>
+                <td>85</td>
+                <td>88</td>
+            </tr>
+        </tbody>
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>國文</th>
+                <th>數學</th>
+            </tr>
+        </thead>
+
+        <caption>成績單</caption>
+    </table>
+</body>
+</html>

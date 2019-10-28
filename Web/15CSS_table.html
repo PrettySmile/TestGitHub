@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <!--寫border指box，所以table設定，不代表裡面的每格都一樣-->
+    <!--寫text指內容，所以table text-align設center全部都會吃-->
+    <!--margin指，物件(box)跟物件(box)之間的距離，只有在相對位置才有意義，如果在整個被框起來的時候，會沒辦法使用-->
+    <table style="border:3px double;border-bottom:5px dotted red;width:300px;height:100px;text-align:center;border-spacing:30px;box-shadow:4px 4px 7px black;margin:auto">
+        <!--一個元素(table/td/..etc)就是一個階層，所以border指會作用在table上，子節點不會有-->
+        <tfoot>
+            <tr>
+                <th colspan="3" style="border:1px solid">製表人：笑嘻嘻</th>
+            </tr>
+        </tfoot>
+        <tbody>
+            <tr>
+                <td style="border:1px solid">張三</td><!--很麻煩，不會繼承table的style，需要獨立下border-->
+                <td style="border:1px solid">85</td>
+                <td style="border:1px solid">90</td>
+            </tr>
+            <tr>
+                <td style="border:1px solid">李四</td>
+                <td style="border:1px solid;padding:20px">78</td><!--padding指content到border的距離-->
+                <td style="border:1px solid">98</td>
+            </tr>
+            <tr style="margin-buttom:30px">
+                <td style="border:1px solid">王五</td>
+                <td style="border:1px solid">85</td>
+                <td style="border:1px solid;margin-buttom:30px">88</td><!---->
+            </tr>
+        </tbody>
+        <thead>
+            <tr>
+                <th style="border:1px solid">姓名</th>
+                <th style="border:1px solid">國文</th>
+                <th style="border:1px solid">數學</th>
+            </tr>
+        </thead>
+
+        <caption>成績單</caption>
+    </table>
+</body>
+</html>

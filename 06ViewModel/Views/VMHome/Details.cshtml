@@ -1,0 +1,87 @@
+﻿@*@model _06ViewModel.Models.員工*@
+@model _06ViewModel.ViewModels.EmpTitle
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>員工</h4>
+    <hr />    
+    @foreach (var item in Model.Employee)
+    {
+        ViewBag.empID = item.員工編號;
+        <dl class="dl-horizontal">
+            <dt>
+                姓名
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => item.姓名)
+            </dd>
+
+            <dt>
+                英文名
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => item.名)
+            </dd>
+
+            <dt>
+                稱呼
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => item.稱呼)
+            </dd>
+
+            <dt>
+                出生日期
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => item.出生日期)
+            </dd>
+
+            <dt>
+                地址
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => item.地址)
+            </dd>
+
+            <dt>
+                城市
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => item.城市)
+            </dd>
+
+            <dt>
+                行政區
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => item.行政區)
+            </dd>
+
+            <dt>
+                職稱
+            </dt>
+
+            <dd>
+                @ViewBag.jobTitle
+            </dd>
+
+        </dl>
+    }    
+</div>
+<p>
+    @Html.ActionLink("刪除", "Delete", new { id = ViewBag.empID, jobTitleID = ViewBag.jobTitleID }, new { @class = "btn btn-danger", onclick = "return confirm('您確定要刪除嗎？')" })
+    @Html.ActionLink("Back to List", "Index", new { jobTitleID = @ViewBag.jobTitleID })
+</p>

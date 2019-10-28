@@ -1,0 +1,140 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+    <script>
+        //for迴圈
+        //for (let i = 1; i <= 6; i++) {
+        //    document.write("<h" + i + ">Welcome my Homepage!!</h" + i + ">");
+        //}
+        //document.write("<hr>");
+
+
+        //(1)
+        //for巢狀迴圈--時間複雜度是兩個迴圈的相乘i*j
+        //for (let j = 1; j <= 10; j++) {
+        //    for (let i = 1; i <= 6; i++) {
+        //        document.write("<h" + i + ">Welcome my Homepage!!</h" + i + ">");
+        //    }
+        //}
+
+        //(2)
+        //for (let i = 1; i <= 100; i++) {
+        //    document.write("<h1>Welcome my Homepage!!</h1>");
+        //    document.write("<h2>Welcome my Homepage!!</h2>");
+        //    document.write("<h3>Welcome my Homepage!!</h3>");
+        //    document.write("<h4>Welcome my Homepage!!</h4>");
+        //    document.write("<h5>Welcome my Homepage!!</h5>");
+        //    document.write("<h6>Welcome my Homepage!!</h6>");
+        //}
+
+        //(3)
+        //for (let i = 0; i < 600; i++) {
+        //    let a = (i % 6) + 1;//1-6
+        //    document.write("<h" + a + ">Welcome my Homepage!!</h" + a + ">");
+        //}
+
+        //(4)
+        //let result = "", k = 1, times = 0;
+        //for (let i = 1; i <= 100; i++) {
+        //    if (k != 0) {
+        //        result += "<h" + k + ">Welcome my Homepage!!</h" + i + ">";
+        //        k++;
+        //    }
+        //    if (k == 7) {
+        //        k = 0;
+        //        i = 1;
+        //        times++;
+        //        document.write(times+";"+result);
+        //    } else if (k == 0) {
+        //        times++;
+        //        document.write(times+";"+result);
+        //    }
+        //}
+
+        //(5)
+        //let result = "";
+        //for (let i = 1; i <= 6; i++) {
+        //    result += "<h" + i + ">Welcome my Homepage!!</h" + i + ">";
+        //}
+        //for (let j = 1; j <= 100; j++) {
+        //    document.write(result);
+        //}
+
+        //(6)
+        let result="",j=1,times=0;
+        for (let i = 1; i <= 12; i++) {
+            result = result + "<h" + j + ">Welcome my Homepage!!</h" + j + ">";
+            //console.log(result);
+            j++;
+            //times++;
+            //document.write(times);
+            if (j == 7) {
+                //document.write("<hr/>");
+                j = 1;
+                document.write(result);
+            }
+            
+        }
+        console.log(result);
+        //document.write(result);
+
+
+        //////////////////////////////////////////////////////////////////////
+        //(1)
+        //for (let i = 1; i <= 5; i++) {
+        //    for (let j = 1; j <= 5; j++) {
+        //        if (i >= j) {
+        //            document.write("*");
+        //        }
+        //    }
+        //    document.write("<br/>");
+        //}
+
+        //document.write("<hr/>");
+
+        //(2)
+        //let result = "", q = "*";        
+        //for (let i = 1; i <= 5; i++) {
+        //    if (i == 1) {
+        //        result = q + "<br/>";
+        //    } else {
+        //        result = q + result;
+        //    }
+        //    document.write(result);
+        //    console.log(result);
+        //}
+
+        document.write("<hr/>");
+
+        //let temp = "";
+        //for (let i = 1; i <= 5; i++) {
+        //    temp += "*";
+        //    document.write(temp);
+        //    document.write("<br/>");
+        //}
+
+
+        //(3) 未寫完，倒數星星
+        //let result = "";
+        //let temp = "";
+        //for (let i = 5; i >= 1; i--) {
+        //    if (i == 5) {
+        //        temp = "*****";
+        //    } else if (i == 4) {
+        //        temp = "****";
+        //    } else if (i == 3) {
+        //        temp = "***";
+        //    }
+
+        //    document.write("*");
+        //}
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,188 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        #stage01 {
+            width: 630px;
+            height: 840px;
+            position: relative;
+        }
+
+        #stage01_BG {
+            top: 0px;
+            left: -630px;
+        }
+
+        #stage01_Ball {
+            left: 0px;
+            top: 780px;
+            width: 42px;
+            height: 60px;
+        }
+
+        #stage01_pica {
+            opacity: 0;
+            width: 11px;
+            height: 10px;
+            top: 400px;
+            left: 203px;
+        }
+
+
+        #stage02 {
+            width: 630px;
+            height: 840px;
+            position: relative;
+        }
+
+        #stage02_ding {
+            top: 200px;
+            left: 85px;
+            width: 460px;
+            height: 445px;
+        }
+
+        .position {
+            position: absolute;
+        }
+
+        h1 {
+            cursor: pointer;
+            top: 630px;
+            left: 160px;
+            border: 5px solid gray;
+            border-radius:20%;
+            color: #213281;
+        }
+    </style>
+</head>
+<body>
+    <audio id="bgMusic" controls="controls">
+        <source src="sound/PokemonGo.mp3" type="audio/mpeg" id="song" />
+    </audio>
+
+    <div id="stage01">
+        <img id="stage01_BG" src="animate/pokemonBG.png" />
+        <img id="stage01_Ball" src="animate/ball.gif" />
+        <img id="stage01_pica" src="animate/pica.gif" />
+        <h1>點我!點我! 上吧胖丁~</h1>
+    </div>
+
+    <div id="stage02">
+        <img id="stage02_BG" src="animate/pokemonBG.png" />
+        <img id="stage02_ding" src="animate/ding.gif" style="z-index:0" />
+        <h1>點我!點我! 上吧皮卡丘~</h1>
+    </div>
+
+    <script src="../../Scripts/jquery-3.4.1.js"></script>
+    <script>
+        let bgMusic = document.getElementById("bgMusic");
+        var booFlashBG = false;
+
+        function init() {
+            bgMusic.addEventListener("canplay", onSoundCanPlay);
+            $('#stage01').children().addClass('position');
+            $('#stage02').children().addClass('position');
+            resetStage01();
+            resetStage02();
+            playStage01();
+        }
+
+        $('#stage01>h1,#stage02>h1').mouseover(function () {
+            $(this).css('text-shadow', '10px 5px 8px yellow');
+        });
+
+        $('#stage01>h1,#stage02>h1').mouseout(function () {
+            $(this).css('text-shadow', '');
+        });
+
+        $('#stage01>h1').click(function () {
+            $('#stage01').hide();
+            $('#stage02').show();
+            resetStage02();
+            playStage02();
+            changeBgMusic();
+        });
+
+        $('#stage02>h1').click(function () {
+            $('#stage01').show();
+            $('#stage02').hide();
+            resetStage01();
+            playStage01();
+            changeBgMusic();
+        });
+
+        function resetStage01() {
+            $('#stage01_BG').css('left', '-630px');
+            $('#stage01_Ball').hide();
+            $('#stage01_Ball').css('left', '0px');
+            $('#stage01_Ball').css('top', '780px');
+            $('#stage01_pica').css('width', '11px');
+            $('#stage01_pica').css('height', '10px');
+            $('#stage01_pica').css('opacity', '0');
+        }
+
+        function playStage01() {
+            //$('#bgMusic').play();
+            //位移、放大縮小、漸變
+            $('#stage01_BG').animate({ 'left': /*'-=294'*/'+=680' }, 500, 'swing', function () {
+                $('#stage01_BG').animate({ 'left': /*'-=294'*/'-=50' }, 200, 'swing', function () {
+                    $('#stage01_Ball').show();
+                    $('#stage01_Ball').animate({ 'left': /*'-=294'*/'+=150', 'top': '-=390' }, 500, 'swing', function () {
+                        $(this).hide(300);
+                        $('#stage01_pica').animate({ 'width': '+=225', 'height': '+=202', 'opacity': '+=1' }, 1000);
+                    });
+                });
+            });
+        }
+        
+        function resetStage02() {
+            $('#stage02').hide();
+            $('#stage02_BG').hide();
+            $('#stage02_ding').hide();
+        }        
+
+        function playStage02() {
+            //淡入、圖層切換
+            $('#stage02').show();
+            
+            $('#stage02_BG').fadeIn(1500, function () {
+                $('#stage02_BG').show();
+                $('#stage02_ding').show();
+                flashBG();
+            });
+        }
+
+        function flashBG() {
+            booFlashBG = !booFlashBG;
+            if (booFlashBG) {
+                $('#stage02_BG').css("z-index", "0");
+            } else {
+                $('#stage02_BG').css("z-index", "1");
+            }
+            setTimeout(flashBG,300);
+        }
+
+        function onSoundCanPlay() {
+            bgMusic.play();
+        }
+
+        function changeBgMusic() {
+            if ($('#song').attr('src') == "sound/PokemonGo.mp3") {
+                $('#song').attr('src', 'sound/PokemonGo2.mp3')
+            } else {
+                $('#song').attr('src', 'sound/PokemonGo.mp3')
+            }
+            bgMusic.load();
+        }
+
+        window.onload = function () {
+            init();
+        };
+
+    </script>
+
+</body>
+</html>

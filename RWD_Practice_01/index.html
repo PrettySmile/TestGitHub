@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/MyStyle.css" rel="stylesheet" />
+</head>
+<body>
+
+<header class="header">
+    <!--fluid:流動的意思，會順著人家的大小-->
+	<img src="images/banner.jpg" alt="橫幅廣告" class="img-fluid">
+</header> 
+
+    <!--SEO:很容易被使用者搜尋的關鍵字，用成標題h標籤-->
+    <!--strong:加粗用，w3c說，有利於搜尋引擎-->
+<section class="container">
+	<div class="row">
+		<div class="col-12 col-md-4 text-center">
+            <h2 class="text-danger"><strong>優質的師資</strong></h2>
+            <p>師資均具相關領域之博碩士學位，並有多年業界實務經驗</p>
+		</div>
+        <div class="col-12 col-md-4 text-center">
+            <h2 class="text-danger"><strong>紮實的訓練</strong></h2>
+            <p>以密集訓練將軟體設計課程及技能如一條鍊子串接起來，期能達到業界用人標準</p>
+        </div>
+        <div class="col-12 col-md-4 text-center">
+            <h2 class="text-danger"><strong>生動的教學</strong></h2>
+            <p>以學思達翻轉教學法為主軸，取代枯橾的完全單向授課</p>
+        </div>
+	</div>
+</section>
+
+<section class="d-flex justify-content-center bg-danger slogan">
+    <h3 class="align-self-center text-white"><strong>行動商務系統設計與開發班課程</strong></h3>
+</section>
+
+<section class="container">
+	<div class="row">
+	
+		<div class="col-12">
+			<h1 class="text-success text-center"><strong>課程介紹</strong></h1>
+		</div>
+
+		<div class="col-md-4">
+			<div class="box-content">
+				<div>
+					<img src="images/bootstrap.jpg" alt="bootstrap" class="img-fluid d-block m-auto w-75">
+				</div>
+				<div class="mt-2 mb-2">
+					<h3>Bootstrap 4</h3>
+				</div>
+				<div class="text-info mt-2 mb-2">最新響應式網頁設計前端框架，讓您輕輕鬆鬆打開RWD的大門</div>
+				<div class="text-muted">
+					<span>講師：廖德華</span>
+				</div>
+                <div class="mt-2 mb-2">
+                    <span>課程時數：32 小時</span>
+                </div>
+                <div class="mt-2 mb-2 text-center">
+                    <h4 class="text-danger"><small class="text-muted">原價 NT$ 1600</small> NT$ 1200</h4>
+                </div>
+                <div class="mt-2 mb-2">
+                    <button type="button" class="btn btn-danger btn-lg btn-block">我要上課</button>
+                </div>
+			</div>
+		</div>
+
+        <div class="col-md-4">
+            <div class="box-content">
+                <div>
+                    <!--d:display-->
+                    <img src="images/html5.jpg" alt="html5" class="img-fluid d-block m-auto w-75">
+                </div>
+                <div class="mt-2 mb-2">
+                    <h3>HTML5 網頁設計</h3>
+                </div>
+                <div class="text-info mt-2 mb-2">W3C大力推廣的最近網頁設計標準，除了新標籤外，更能與CSS緊密結合</div>
+                <div>
+                    <span>講師：廖德華</span>
+                </div>
+                <div class="mt-2 mb-2">
+                    <span>課程時數：40 小時</span>
+                </div>
+                <div class="mt-2 mb-2 text-center">
+                    <h4 class="text-danger"><small class="text-muted">原價 NT$ 3200</small>NT$ 1600</h4>
+                </div>
+                <div class="mt-2 mb-2">
+                    <button type="button" class="btn btn-danger btn-lg btn-block">我要上課</button>
+                </div>
+            </div>
+        </div>
+		
+        <div class="col-md-4">
+            <div class="box-content">
+                <div>
+                    <img src="images/javascript.jpg" alt="javascript" class="img-fluid d-block m-auto w-75">
+                </div>
+                <div class="mt-2 mb-2">
+                    <h3>JavaScript</h3>
+                </div>
+                <div class="text-info mt-2 mb-2">網頁前端程式設計最熱門的語言，您一定要熟練它！</div>
+                <div>
+                    <span>講師：廖德華</span>
+                </div>
+                <div class="mt-2 mb-2">
+                    <span>課程時數：32 小時</span>
+                </div>
+                <div class="mt-2 mb-2 text-center">
+                    <h4 class="text-danger"><small class="text-muted">原價 NT$ 3200</small>NT$ 1600</h4>
+                </div>
+                <div class="mt-2 mb-2">
+                    <button type="button" class="btn btn-danger btn-lg btn-block">我要上課</button>
+                </div>
+            </div>
+        </div>
+	
+	</div>
+</section>
+
+<footer class="mt-5 bg-dark footer-content">
+    <p class="text-center text-white mb-0">Copyright © <span id="y"></span> KPPTR WDA</p>
+</footer>
+
+    <script>
+        var d = new Date();
+        y.innerText = d.getFullYear();
+    </script>
+</body>
+</html>

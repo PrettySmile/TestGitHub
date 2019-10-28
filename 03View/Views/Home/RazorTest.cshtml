@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewBag.Title = "RazorTest";
+}
+
+<h2>RazorTest</h2>
+
+@*單行註解*@
+
+
+@*
+    多行註解    
+*@
+
+
+@{ 
+    @*   @:代表當做字，純文字前須加@:  *@
+    @: 歡迎
+
+    var name = "John";
+    string name2 = "Kevin";
+    int Math = 85, Eng = 90, Chi = 95;
+
+    @:歡迎 @name  光臨
+    <span>歡迎 @name  光臨</span>
+}
+
+<span>歡迎 @name  光臨</span>
+
+<h2>@Math+@Eng+@Chi=@(Math+Eng+Chi)</h2>
+
+@(ViewBag.IsLogin=true)
+
+@if (ViewBag.IsLogin)
+{
+    @:會員已登入
+}
+else
+{
+    <span>會員已登出</span>
+}
+
+<hr/>
+
+@{ 
+    string[] MarketName = { "瑞豐夜市", "新堀江商圈", "六合夜市", "青年夜市", "花園夜市", "大東夜市", "武聖夜市" };
+}
+
+<ul>
+    @foreach (var item in MarketName)
+    {
+        <li>@item</li>
+    }
+</ul>

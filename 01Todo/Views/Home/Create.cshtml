@@ -1,0 +1,97 @@
+﻿@*這裡的model是給helper用的，但因為我們拿掉了，所以此行也可以拿掉！*@
+@*@model _01Todo.Models.ToDo*@
+
+@{
+    ViewBag.Title = "待辦事項新增";
+}
+
+    <h2>待辦事項新增</h2>
+
+
+    @*get 把資料帶到url當成參數，送到伺服器。ex:認證信*@
+    @*post 表單內的資料，跟著封包的資料欄位走，所以看不到。*@
+    <form method="post" action="Create">
+        @*@using (Html.BeginForm())
+        {
+            //一定要從view新增資料，因為每一次的token值不一樣！ 防止機器人新增資料用！
+            @Html.AntiForgeryToken()*@
+        
+        <div class="form-horizontal">
+            @*<h4>ToDo</h4>*@
+            <hr />
+            @*Summary彙總所有沒有驗證通過的，會把error message列在上面給人看！*@
+            @*@Html.ValidationSummary(true, "", new { @class = "text-danger" })*@
+            <div class="form-group">
+                <label class="control-label col-md-2" for="Title">標題</label>
+                @*@Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                <div class="col-md-10">
+                    @*required：必填欄位的意思*@
+                    <input id="Title" name="Title" type="text" class = "form-control" required="required" value="@ViewBag.Title2"/>
+                    @*@Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control",required="required" } })
+                    @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })*@
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-2" for="Image">圖示</label>
+                @*@Html.LabelFor(model => model.Image, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <div class="col-md-10">
+                @{
+                    string selected = "";
+                    string selected2 = "";
+                    if (ViewBag.Image == "0.png")
+                    {
+                        selected = "selected";
+                    }
+                    if (ViewBag.Image == "1.png")
+                    {
+                        selected2 = "selected";
+                    }
+                }
+                <select id="Image" name="Image" class="form-control">
+                    <option value="0.png" @selected>重要</option>
+                    <option value="1.png" @selected2>普通</option>
+                </select>
+                <img src="~/images/0.png" id="ImageImg"/>
+                @*<input id="Image" name="Image" type="text" class="form-control" />*@
+                @*@Html.EditorFor(model => model.Image, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })*@
+            </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-2">完成日</label>
+                @*@Html.LabelFor(model => model.Date, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <div class="col-md-10">
+                <input id="Date" name="Date" type="date" class="form-control" required value="@ViewBag.Date"/>
+                @*@Html.EditorFor(model => model.Date, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Date, "", new { @class = "text-danger" })*@
+            </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="新增" class="btn btn-primary" />
+                </div>
+            </div>
+        </div>
+        @*}*@
+    </form>
+
+<div>
+    <a href="/Home/Index">返回待辦事項列表</a>
+    @*@Html.ActionLink("Back to List", "Index")*@
+</div>
+
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+<script>
+    $("#Image").change(changeImg);
+    function changeImg(e) {
+        //let selectOptionValue = $("#Image").options[e.target.selectedIndex].value;
+        
+        //$("#ImageImg").attr('src', "~/images/" + $('#Image').val());
+        $("#ImageImg").attr('src',"../images/"+e.target.value);
+    }
+</script>

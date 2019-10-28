@@ -1,0 +1,25 @@
+﻿.header {
+    margin-bottom: 80px;
+}
+
+    .header img {
+        /*圖片的響應式，就是設定相對寬度*/
+        width: 100%
+    }
+
+.slogan {
+    margin:50px 0;
+    height:80px;
+}
+
+.box-content{
+    padding:20px;
+    border:1px solid rgba(0,0,0,0.05);
+    box-shadow:0 3px 9px rgba(0,0,0,0.15);
+}
+
+.footer-content{
+    /*垂直置中:字的高度跟節點的高度一樣，(以前的作法)*/
+    height:60px;
+    line-height:60px;
+}

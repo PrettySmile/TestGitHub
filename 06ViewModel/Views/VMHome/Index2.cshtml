@@ -1,0 +1,73 @@
+﻿@model IEnumerable<_06ViewModel.Models.員工>
+
+@{
+    ViewBag.Title = "Index2";
+}
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.姓名)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.名)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.稱呼)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.出生日期)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.地址)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.城市)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.行政區)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.職稱1.職稱1)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.姓名)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.名)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.稱呼)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.出生日期)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.地址)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.城市)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.行政區)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.職稱1.職稱1)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.員工編號 }) |
+            @Html.ActionLink("Details", "Details", new { id=item.員工編號 }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.員工編號 })
+        </td>
+    </tr>
+}
+
+</table>

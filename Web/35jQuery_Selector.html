@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        div {
+            color: red;
+        }
+
+            div p {
+                color: green;
+            }
+
+            div > p {
+                color: blue;
+            }
+
+            /*兄弟，div的下一個*/
+            div + p {
+                color: yellow;
+            }
+
+            /*兄弟，不管隔幾個*/
+            div~p{
+                color:orange;
+            }
+    </style>
+</head>
+<body>
+    <div>
+        <p>JavaScript</p>
+    </div>
+    <span>
+        jQuery
+    </span>
+    <span>
+        <p>
+            HTML
+        </p>
+    </span>
+    <p>
+        ASP.net MVC
+    </p>
+    <div>
+        <p>CSS3</p>
+        <b>
+            <p>ASP.net</p>
+        </b>
+        <span>PHP</span>
+        <span>
+            <p>SQL Server</p>
+        </span>
+    </div>
+    <p>
+        JAVA
+    </p>
+</body>
+</html>

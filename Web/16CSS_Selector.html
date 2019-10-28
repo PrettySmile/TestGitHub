@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        h1{/*此指標籤*/ 
+            font-size:3em;/*em=>3倍大的意思*/
+            color:red;
+            background-color:aqua;
+        }
+        .Jack{
+            text-align:center;
+        }
+        .Mary{
+            font-size:2em;
+            color:green;
+        }
+        .h1{/*此指類別*/
+            font-size:2rem;/*rem=>不因為階層再階層而翻倍，會從根節點去計算*/
+            font-weight:900;
+            color:red;
+        }
+        #h1{/*此指id*/
+            font-family:Forte;
+            font-size:5rem;
+        }
+        #h11{
+            font-size:0.5rem;
+            font-weight:100;
+            color:orange;
+        }
+    </style>
+</head>
+<body>
+    <!--選擇器Selector：用一種寫法，告訴網頁要在這份文件選擇哪些元素來改變外觀樣式-->
+    <!--選擇器只有三種=>tag/class(類別)/id-->
+    <h1>Welcome My Homepage!!!</h1>
+    <h1>Welcome My Homepage!!!</h1>
+    <h1>Welcome My Homepage!!!</h1>
+    <h1 class="Jack">Welcome My Homepage!!!</h1>
+    <h1>Welcome My Homepage!!!</h1>
+    <h1 class="Mary">Welcome My Homepage!!!</h1>
+    <h1>Welcome My Homepage!!!</h1>
+    <h1 class="Jack">Welcome My Homepage!!!</h1>
+    <h1>Welcome My Homepage!!!</h1>
+    <h1 class="Mary">Welcome My Homepage!!!</h1>
+    <h1>Welcome My Homepage!!!</h1>
+    <h1>Welcome My Homepage!!!</h1>
+    <h1 class="Jack">Welcome My Homepage!!!</h1>
+    <h1>Welcome My Homepage!!!</h1>
+    <h1 id="h1">Welcome My Homepage!!!</h1>
+    <h1 class="Mary" id="h11">Welcome My Homepage!!!</h1>
+    <h1>Welcome My Homepage!!!</h1>
+    <h1>Welcome My Homepage!!!</h1>
+    <span class="Mary h1">Welcome My Homepage!!!</span>
+    <p class="Mary Jack h1">Welcome My Homepage!!!</p><!--combine的意思，即同時擁有Jack Mary的屬性--><!--類別css屬性相衝，會因為style的順序，後面蓋前面，而不是因為combine的順序-->
+    <div class="Mary Jack">
+        <div class="h1"><!--這裡會把父節點的大小，再往2倍大，所以會特別大-->
+            Welcome My Homepage!!!
+        </div>
+    </div>
+</body>
+</html>

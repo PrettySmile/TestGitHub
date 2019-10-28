@@ -1,0 +1,63 @@
+﻿@model IEnumerable<_04EF.Models.tStudent>
+
+@{
+    ViewBag.Title = "學生列表";
+}
+
+<h2>學生列表</h2>
+
+<p>
+    @Html.ActionLink("新增學生資料", "Create")
+</p>
+
+@if (Model.Count() == 0)
+{
+    <h1 class="alert alert-success">無任何資料</h1>
+}
+else
+{
+
+
+
+    <table class="table">
+        <tr>
+            @*DisplayNameFor 會抓module的欄位值*@
+            <th>
+                @Html.DisplayNameFor(model => model.fStuId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fScore)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.fStuId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.fName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.fEmail)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.fScore)
+                </td>
+                <td>
+                    @*@Html.ActionLink("Edit", "Edit", new { id = item.fStuId }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.fStuId }) |*@
+                    @Html.ActionLink("刪除", "Delete", new { id = item.fStuId }, new { onclick = "return confirm('您確定要刪除嗎??')", @class = "btn btn-danger" })
+                </td>
+            </tr>
+        }
+    </table>
+}

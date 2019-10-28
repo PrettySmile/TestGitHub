@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+    <script>
+        var a = "abcdefg";
+        a = reverse(a);
+        console.log("a=>"+a);
+
+        var Rainbow = new Array("紅", "橙", "黃", "綠", "藍", "靛", "紫"); //初始化=鑄造物件
+        Rainbow = reverse(Rainbow);        
+        console.log("Rainbow=>" + Rainbow);
+
+        function reverse(str) {
+            let result = "";
+            for (let i = str.length - 1; i >= 0; i--) {
+            result += str[i];
+            }
+            return result;
+        }
+
+        //////////////////////////////////
+
+        //求x與y的最大公因數
+        //let x = 5684, y = 7658;
+        let x = 2, y = 3;
+        let xArray = [];
+        let yArray = [];
+        function ccc(x, y) {
+            for (let i = 1; i <= x; i++) {
+                let a = x % i;
+                if (a == 0) {
+                    xArray.push(i);
+                }
+            }
+            for (let ii = 1; ii <= y; ii++) {
+                let a = y % ii;
+                if (a == 0) {
+                    yArray.push(ii);
+                }
+            }
+            for (let k = xArray.length - 1; k >= 0; k--) {
+                for (let kk = yArray.length - 1; kk >= 0; kk--) {
+                    if (xArray[k] == yArray[kk]) {
+                        return xArray[k];
+                    }
+                }
+            }
+        }
+        console.log(ccc(x, y));
+
+        function ccc2(x, y) {
+            let a=x;//被除數
+            let b=y;//除數
+            let mode;//餘數
+            do {
+                mode = a % b;
+                a = b;
+                b = mode;
+            } while (mode != 0);
+            return a;
+        }        
+        console.log(ccc2(x, y));
+
+
+        ///////////////////////////////
+        //十進制轉換二進制
+        let c = 23456;
+        //let c = 20;
+        //c = 543;
+        function aa(c) {
+            let a = c;//被除數
+            let b = 2;//除數
+            let d;//商數
+            let mode;//餘數
+            let result="";
+            do {
+                d = Math.floor(a / b);
+                mode = a % b;
+                result += mode;
+                a = d;       
+            } while (a != 0);
+            return reverse(result);
+        }
+        console.log(aa(c));
+
+
+    </script>
+</body>
+</html>

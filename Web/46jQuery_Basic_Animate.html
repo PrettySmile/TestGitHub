@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        #container{
+            height:1000px;
+            width:800px;
+            position:relative;
+        }
+        #title{
+            border:3px solid white;
+            background-color:black;
+            color:white;
+            font-size:20pt;
+            text-align:center;
+            width:450px;
+            padding:5px;
+            font-weight:900;
+            font-family:微軟正黑體;
+            position:absolute;
+            /*如果不設absolute，等下設top或left會無效。*/
+            top:650px;
+            left:500px;
+        }
+        #photo{
+            position:absolute;
+            left:-1200px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <img src="images/Desert.jpg" id="photo"/>
+        <p id="title">大漠風光</p>
+    </div>
+
+    <script src="Scripts/jquery-3.4.1.js"></script>
+    <script>
+        $('#title').hide();
+        $('#photo').animate({ 'left': '+=1200' }, 2000, 'swing', function () {
+            $('#title').fadeIn(1500, function () {
+                $('#title , #photo').hide(2000);
+            });//fadeIn淡入
+        });
+    </script>
+
+</body>
+</html>

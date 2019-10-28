@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        .line {
+            border: 1px solid;
+        }
+    </style>
+</head>
+<body>
+    <ol id="list">
+        <li>JavaScript程式設計</li>
+        <li>jQuery程式設計</li>
+        <li>ASP.net程式設計</li>
+        <li>PHP程式設計</li>
+        <li>JSP程式設計</li>
+        <li>ASP3.0程式設計</li>
+        <li>Dreamweaver網頁設計</li>
+        <li><a href="tw.yahoo.com">Yahoo!奇摩</a></li>
+        <li><a href="http://www.google.com.tw">Google</a></li>
+        <li><a href="http://kpptr.wda.gov.tw">高屏澎東分署</a></li>
+    </ol>
+    <script src="Scripts/jquery-3.4.1.min.js"></script>
+    <script>
+        //$('#list li').addClass('line');
+        //$('#list li:contains("SP")').addClass('line');//內容有包含SP，才會被套上CSS效果
+        //$('#list li>a[href*=o]').addClass('line');//a標籤的href屬性內文中，有任何包含o的；*等於包含指定屬性中的值有包含=後面那個字
+        //$('#list li>a[href$="tw"]').addClass('line');//href屬性內文，結尾字是tw的
+        $('#list li>a[href^="tw"]').addClass('line');//找開頭是tw的
+    </script>
+
+</body>
+</html>

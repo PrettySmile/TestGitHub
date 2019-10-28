@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        #container {
+            width: 770px;
+            margin: auto;
+            position: relative;
+        }
+
+        header {
+            background-color: red;
+            height: 80px;
+        }
+
+        aside {
+            background-color: yellow;
+            height: 420px;
+            width: 210px;
+            float: left;
+        }
+
+        article {
+            background-color: green;
+            height: 420px;
+            width: 560px;
+            float: left;
+        }
+
+        footer {
+            background-color: blue;
+            height: 76px;
+            clear: both; /*因為float的關係，會往上跑，但內容不會往上跑，需清除float的影響*/
+        }
+
+        #ad1 {
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+
+        #ad2 {
+            position: fixed;
+            top: 0;
+            right: 0;
+        }
+
+        #ad3 {
+            position: absolute;
+            top: 50px;
+            /*left:109px;*/ /*在程式中設定left值*/
+        }
+
+            #ad3 > span {
+                background-color: #cccccc;
+                color: white;
+                font-size: 0.5rem;
+                cursor: pointer;
+            }
+
+        .hide {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!--為什麼此處的container是相對的，不管有沒有下position都是相對的？-->
+    <div id="container">
+        <header>
+            <img src="images/top.jpg" />
+        </header>
+        <aside>
+            <img src="images/left.jpg" />
+        </aside>
+        <article>
+            <img src="images/right.jpg" />
+        </article>
+        <footer>
+            <img src="images/bottom.jpg" />
+        </footer>
+        <div id="ad3">
+            <span>點我關閉</span>
+            <br />
+            <img src="images/ad.jpg" />
+        </div>
+    </div>
+    <img id="ad1" src="images/banner1.jpg" />
+    <img id="ad2" src="images/banner2.jpg" />
+
+    <div style="height:2000px"></div>
+    <script>
+        window.onload = function () {
+            var ad3 = document.getElementById("ad3");
+            var container = document.getElementById("container");
+            var w = (container.clientWidth - ad3.clientWidth) / 2;
+            ad3.style.left = w + "px";
+            ad3.children[0].addEventListener("click", function () {
+                /*看DOM數=>第一個小孩是span；第二個小孩是br，第三個小孩是img*/
+                ad3.className = "hide";
+            });
+        }
+    </script>
+</body>
+</html>

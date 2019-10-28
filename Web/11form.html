@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <form>
+        <hr />
+        <input id="Text1" type="text" />
+        <input id="Password1" type="password" required /><!--required代表必填的意思-->
+        <input id="File1" type="file" />
+        <hr />
+        <input id="Checkbox1" type="checkbox" />爬山
+        <input id="Checkbox1" type="checkbox" />看雲
+        <input id="Checkbox1" type="checkbox" />看海
+        <hr />
+        <input id="Radio1" type="radio" name="gender" />男
+        <input id="Radio1" type="radio" name="gender" />女
+        <hr />
+        <textarea id="TextArea1" rows="5" cols="30"></textarea>
+        <hr />
+        <select id="Select1">
+            <option>333</option>
+            <option>111</option>
+            <option>222</option>
+        </select>
+        <hr />
+        <input id="Text1" type="color" />
+        <input id="Text1" type="datetime-local" />
+        <input id="Text1" type="range" />
+        <hr />
+        <input id="Button1" type="button" value="button" onclick="alert('Hello!!')" />
+        <input id="Reset1" type="reset" value="reset" /><!--不是清空，是變回原狀態的意思(若有預設值會回歸預設值)-->
+        <input id="Submit1" type="submit" value="submit" />
+        <hr />
+        <hr />
+        <hr />
+
+
+        <!----------------------分隔線---------------------->
+        <!----------------------分隔線---------------------->
+
+        <fieldset style="width:250px">
+            <legend>登入</legend>
+            <table>
+                <tr>
+                    <td>帳號</td>
+                    <td>
+                        <input id="Text1" type="text" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>密碼</td>
+                    <td>
+                        <input id="Password1" type="password" />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input id="Reset1" type="reset" value="reset" />
+                        <input id="Submit1" type="submit" value="submit" />
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+</body>
+</html>

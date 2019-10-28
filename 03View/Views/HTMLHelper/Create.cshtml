@@ -1,0 +1,66 @@
+﻿@model _03View.Models.Member
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@*using預防例外發生，寫在using裡面就會處理例外*@
+@using (Html.BeginForm(/*formAction*/"Create","HTMLHelper",FormMethod.Post,new { id="Form1"}))
+{
+    <p>
+        @*帳號：<input id="Text1" name="UserId" type="text" />*@
+        @*TextBoxFor:單行文字方塊*@
+        帳號：@Html.TextBoxFor(m => Model.UserId, new { @class = "form-control" })
+    </p>
+    <p>
+        密碼：@Html.PasswordFor(m => Model.Pwd, new { @class = "form-control" })
+    </p>
+    <p>
+        姓名：@Html.TextBoxFor(m => Model.Name, new { @class = "form-control" })
+    </p>
+    <p>
+        信箱：@Html.TextBoxFor(m => Model.Email, new { type = "email", @class = "form-control" }) @*第2個參數為：自己加的，html原本就有的屬性*@
+    </p>
+    <p>
+        生日：@Html.TextBoxFor(m => Model.Birthday, new { @class = "form-control" })
+    </p>
+    <p>
+        <img id="codeID" src="@Url.Action("getCode")"/><span class="glyphicon glyphicon-refresh" style="font-size:20pt;cursor:pointer;" onclick="form1.codeID.src = '/HTMLHelper/getCode?' + Math.random()"></span>
+        <br />驗證碼：<input id="ValidationCode" name="ValidationCode" type="text" maxlength="6" class="form-control"/>
+    </p>
+    <p>
+        <input id="Submit1" type="submit" value="submit" class="btn btn-default" />
+    </p>
+    <p>
+        @*純顯示文字*@
+        @ViewBag.Msg
+    </p>
+    <p>
+        @*若要以html解讀*@
+        @*傳回沒有html標記*@
+        @Html.Raw(ViewBag.Msg)
+    </p>
+}
+
+
+
+
+<h2>成績判斷</h2>
+@ScoreCheck(60, 70, 50)
+<h2>@MyHelper.GlobalScoreCheck(60, 60, 59)</h2>
+
+
+@helper ScoreCheck(int math, int eng, int chi)
+{
+    int avg = (math + eng + chi) / 3;
+    if (avg >= 60)
+    {
+        @:及格
+    }
+    else
+    {
+        @:不及格
+    }
+}

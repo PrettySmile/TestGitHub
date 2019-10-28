@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        .line{
+            border:1px solid;
+        }
+        .red{
+            background-color:red;
+        }
+        .yellow{
+            background-color:yellow;
+        }
+    </style>
+</head>
+<body>
+
+
+    <ul id="list">
+        <li>aaa</li>
+        <li>bbb</li>
+        <li>ccc</li>
+        <li>
+            ddd
+            <ul id="list1_1">
+                <li>aaa</li>
+                <li>bbb</li>
+                <li>
+                    ccc
+                    <ul id="list1_1_1">
+                        <li>aaa</li>
+                        <li>bbb</li>
+                        <li>ccc</li>
+                        <li>ddd</li>
+                        <li>eee</li>
+                    </ul>
+                </li>
+                <li>ddd</li>
+                <li>
+                    eee
+                    <ul id="list1_1_2">
+                        <li>aaa</li>
+                        <li>bbb</li>
+                        <li>ccc</li>
+                        <li>ddd</li>
+                        <li>eee</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>eee
+        </li>
+    </ul>
+
+    <ul id="list2">
+        <li>aaa</li>
+        <li>bbb</li>
+        <li>ccc</li>
+        <li>ddd</li>
+        <li>eee</li>
+    </ul>
+
+    <script src="Scripts/jquery-3.4.1.js"></script>
+    <script>
+        //$('#list').addClass('red');
+        //$('#list').addClass('line');//red不會被蓋掉，line會再被加上去，combind！
+        //$('#list').addClass('yellow');//yellow因為是設定背景色，所以會把red蓋掉。
+
+        //$('#list').addClass('yellow').addClass('line').addClass('red');
+        //$('#list li').addClass('red');//list底下所有的組孫輩li都加class
+        //$('#list>li').addClass('red');//list下一層的li都加class
+        //$('#list ul').addClass('yellow');//list下一層的li都加class
+        //$('#list>li>ul').addClass('red');//list下一層的li都加class
+        //$('#list>li:nth-child(2n+1)').addClass('red');//list下一層的li都加class
+
+        //var list = document.getElementById("list");;
+        //list.className = "red";
+        //list.className = "line";//red5會被蓋掉，被line取代。
+
+        var list = document.getElementById("list");;
+        list.className = "yellow";
+        list.className += " line";
+        list.className += " red";
+
+        for (let i = 0; i < list.children.length; i++) {
+            if (i % 2 == 0) {
+                list.children[i].className = "red";
+            }
+        }
+    </script>
+</body>
+</html>

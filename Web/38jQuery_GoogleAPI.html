@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <input id="Text1" type="text" />
+    <input id="Button1" type="button" value="搜尋" />
+    <table id="booklist">
+    </table>
+    <script src="Scripts/jquery-3.4.1.js"></script>
+    <script>
+        //xml；SOAP
+        //.ajax；Rest->拋出來的東西就是json
+        $("#Button1").click(select);
+        function select() {
+            $.ajax({
+                type: 'get',
+                url: 'https://www.googleapis.com/books/v1/volumes?q=' + $("#Text1").val(),
+                success: function (data) {
+                    let string = "";
+                    string += "<thead>";
+                    string += "<tr>";
+                    string += "<th>";
+                    string +="圖示";
+                    string += "</th>";
+                    string += "<th>";
+                    string +="書名";
+                    string += "</th>";
+                    string += "<th>";
+                    string +="作者";
+                    string += "</th>";
+                    string += "<th>";
+                    string +="出版商";
+                    string += "</th>";
+                    string += "</tr>";
+                    string += "</thead>";
+                    string +="<tbody>";
+                    for (let i = 0; i < data.items.length; i++) {                        
+                        string += "<tr>";
+                        string += "<td>";
+                        string +="<img src='" + data.items[i]["volumeInfo"]["imageLinks"]["thumbnail"] + "'/>";
+                        string += "</td>";
+                        string += "<td>";
+                        string +=data.items[i]["volumeInfo"]["title"];
+                        string += "</td>";
+                        string += "<td>";
+                        string +=data.items[i]["volumeInfo"]["authors"];
+                        string += "</td>";
+                        string += "<td>";
+                        string +=data.items[i]["volumeInfo"]["publisher"];
+                        string += "</td>";
+                        string += "</tr>";
+                    }
+                    string += "</tbody>";
+                    $("#booklist").append(string);
+                },
+                error: function () {
+                    alert("發生錯誤!!");
+                }
+            });
+        }
+    </script>
+</body>
+</html>

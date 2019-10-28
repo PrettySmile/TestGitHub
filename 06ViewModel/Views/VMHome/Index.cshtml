@@ -1,0 +1,39 @@
+﻿@*@model IEnumerable<_06ViewModel.Models.員工>*@
+@model _06ViewModel.ViewModels.EmpTitle
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<div class="row">
+    <div class="col-xs-4">
+        @foreach (var item in Model.JobTitle)
+        {
+            <p>@Html.ActionLink(item.職稱1,"Index",new { jobTitleID=item.職稱代碼 })</p>
+        }
+    </div>
+    <div class="col-xs-8">
+        <div class="row">
+            <h3 class="alter alert-success">@ViewBag.jobTitle</h3>
+            <p>
+                @Html.ActionLink("新增", "Create", new { jobTitleID = @ViewBag.jobTitleID }, new { @class = "btn btn-primary" })
+            </p>
+            @foreach (var item in Model.Employee)
+            {
+                <div class="col-xs-4 thumbnail">
+                    <h2 class="text-center">@Html.DisplayFor(modelItem => item.姓名)</h2>
+                    <h3 class="text-center text-success">@Html.DisplayFor(modelItem => item.名)</h3>
+                    <h4 class="text-center text-primary">@Html.DisplayFor(modelItem => item.稱呼)</h4>
+                    <p>
+                        @Html.ActionLink("詳細資料", "Details", new { id = item.員工編號,jobTitleID=ViewBag.jobTitleID }, new { @class = "btn btn-info" }) |
+                        @Html.ActionLink("刪除", "Delete", new { id = item.員工編號,jobTitleID=ViewBag.jobTitleID }, new { @class = "btn btn-danger" , onclick="return confirm('您確定要刪除嗎？')"})
+                    </p>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+

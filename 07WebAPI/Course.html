@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <table id="course" class="table table-bordered text-center table-striped table-hover"></table>
+    </div>
+    <script src="Scripts/jquery-3.0.0.min.js"></script>
+    <script>
+        $.ajax({
+            type: "Get"
+            , url: "http://localhost:57832/api/Course"
+            , success: function (data) {
+                $('#course').append("<tr><td>編號</td><td>名稱</td><td>時數</td></tr>");
+                $('#course').append("<tbody>");
+                data.forEach(function (item) {
+                    $('#course').append("<tr><td>" + item.Id + "</td><td>" + item.Name + "</td><td>" + item.Hours + "</td></tr>");
+                });
+                $('#course').append("</tbody>");
+            }
+            , error: function () {
+                alert("Error!");
+            }
+        });
+    </script>
+</body>
+</html>

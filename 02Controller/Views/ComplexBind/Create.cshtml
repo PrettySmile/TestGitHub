@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>新增作業</title>
+</head>
+<body>
+    <form method="post" action="@Url.Action("Create")">
+        <h3>產品新增作業</h3>
+        @*name會自然的找到Product類別的屬性一致*@
+        <div>
+            <p>編號：<input id="PId" name="PId" type="text" value="@ViewBag.PId" required /></p>
+            <p>品名：<input id="PName" name="PName" type="text" value="@ViewBag.PName" required /></p>
+            <p>單價：<input id="Price" name="Price" type="text" value="@ViewBag.Price" required /></p>
+            <p><input id="Submit1" type="submit" value="新增" /></p>
+        </div>
+
+        <hr />
+        @{
+            if (ViewBag.PId != null && ViewBag.PName != null && ViewBag.Price != null)
+            {
+                <p>完成產品資料新增</p>
+                <p>編號：@ViewBag.PId | 品名：@ViewBag.PName | 單價：@ViewBag.Price</p>
+            }
+        }
+
+    </form>
+</body>
+</html>

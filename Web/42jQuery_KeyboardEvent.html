@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+    <p>您還可以輸入<span id="counter"></span>個字</p>
+    <textarea id="memo" rows="10" cols="40" maxlength="100"></textarea>
+    <script src="Scripts/jquery-3.4.1.js"></script>
+    <script>
+        $('#counter').text(100);
+        $('#memo').keyup(function (e) {
+            let memoLength = $(this).val().length;
+            let msg = 100 - memoLength;
+            $('#counter').text(msg);
+        });
+
+    </script>
+
+</body>
+</html>

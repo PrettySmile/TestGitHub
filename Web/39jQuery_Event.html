@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        .line{
+            border:1px solid;
+            cursor:pointer;
+        }
+        .small{
+            font-size:0.5em;
+        }
+        .default{
+            font-size:16px;
+        }
+        .large{
+            font-size:2em;
+        }
+        .selected{
+            background-color:yellow;
+            border:3px double;
+            font-weight:900;
+        }
+        .hide{
+            display:none;
+        }
+        .show{
+            display:block;
+        }
+    </style>
+</head>
+<body>
+    <h2 id="h2">顯示功能按鈕</h2>
+    <div id="switcher">
+        <span id="small">縮小</span>
+        <span id="default">標準</span>
+        <span id="large">放大</span>
+    </div>
+    <p>Hello jQuery!!</p>
+    <script src="Scripts/jquery-3.4.1.js"></script>
+    <script>
+        $("#switcher>span").addClass("line");
+        $('#switcher').addClass('hide');
+        $('#switcher').click(function (e) {
+            let btnId = e.target.id;
+            if (btnId == 'switcher') return;
+            $('#switcher').children().removeClass('selected');
+            $('#' + btnId).addClass('selected');
+            $('p').removeClass();
+            $('p').addClass(btnId);
+        });
+
+        //寫法一
+        //$('#h2').click(function () {
+        //    console.log($('#switcher'));
+        //    let isHidden = $('#switcher').is(':hidden');
+        //    $('#switcher').removeClass('show')
+        //    $(this).text('顯示功能按鈕');//指$('#h2')
+        //    if (isHidden) {
+                                                             //        $('#switcher').addClass('show');
+        //        $(this).text('隱藏功能按鈕');
+        //    }
+        //});
+
+        //寫法二
+        //專門用在做相反的事情上
+        let flag = true;
+        $('#h2').click(function () {
+            $('#switcher').toggle(1000);//用一秒鐘的時間，完成
+            let a = flag ? '隱藏功能按鈕': '顯示功能按鈕';
+            $(this).text(a);
+            flag = !flag;
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <h1 id="h1Text"></h1>
+    <hr />
+    X:<input id="textX" type="text" />
+    Y:<input id="textY" type="text" />
+    <hr />
+    <h2 id="news"></h2>
+    <hr />
+    <img id="car" src="images/car.png" />
+    <script>
+
+        function showMyTime() {
+            let h1 = document.getElementById("h1Text");
+
+            let myTime = new Date();
+            let hours = myTime.getHours();
+            let minutes = myTime.getMinutes();
+            let seconds = myTime.getSeconds();
+
+            hours = hours < 10 ? "0" + hours : hours;
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+
+            //document.write(hours + " : " + minutes + " : " + seconds);
+            h1.innerHTML = hours + " : " + minutes + " : " + seconds;
+
+            setTimeout(showMyTime, 1000);
+        }
+
+        showMyTime();
+        //////////////////////////////////////////////
+        function getXY(evt) {
+            let textX = document.getElementById("textX");
+            let textY = document.getElementById("textY");
+            textX.value = evt.pageX;
+            textY.value = evt.pageY;
+        }
+        document.addEventListener("mousemove", getXY);
+        //////////////////////////////////////////////////
+        let message = "中央氣象局今天表示，輕度颱風利奇馬有機會增強為中度颱風，路徑目前預期會比較接近台灣，從東北部近海北上，預計8日及9日最接近台灣，有機會發布海上及陸上颱風警報。";
+        let h1 = document.getElementById("news");
+        let messageArr = message.split("");
+        //let result="";
+        let i = 0;
+        function showMessage() {
+            //result += messageArr[i];
+            h1.innerText += messageArr[i];
+            i++;
+            if (i >= messageArr.length) {
+                i = 0;
+                h1.innerText = "";
+            }
+            setTimeout(showMessage, 200);
+        }
+        showMessage();
+        /////////////////////////////////////////////////
+        let car = document.getElementById("car");
+        car.style.width = "128px";
+        car.style.height = "128px";
+        car.style.position = "absolute";
+        car.style.left = "0px";        
+        var x = car.offsetLeft;//物件與左邊界的距離                        
+        function run() {
+            car.style.left = x + "px";
+            x += 50;
+            if (x > document.body.clientWidth) x = 0;
+            setTimeout(run,200);
+        }
+        run();
+        
+        
+    </script>
+</body>
+</html>

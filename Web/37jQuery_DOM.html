@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <h1>444444</h1>
+    <div id="container"></div>
+    <h1>333333333</h1>
+    <script src="Scripts/jquery-3.4.1.js"></script>
+    <script>
+        //$('#container').text('<h1>1111111111</h1>');//innerText的意思，指標籤和標籤之間，中間的字
+        //$('#container').html('<h1>1111111111</h1>');//節點發生改變，div裡面會加一個h1的意思
+
+        //$('#container').html('<h1>1111111111</h1>').text('<h2>222222222222</h2>');//相衝突，會執行後面
+        //若不要衝突，要用append附加，會變成子節點
+        //$('#container').html('<h1>1111111111</h1>').append('<h2>222222222222</h2>');
+
+        //after擺在截點之後，因為選擇器最初是寫container，所以加在container後面
+        //會平行
+        //$('#container').html('<h1>1111111111</h1>').after('<h2>222222222222</h2>');
+
+        //若要用after達成一樣的子節點效果
+        $('#container').html('<h1>1111111111</h1>');
+        $('#container h1').after('<h2>222222222222</h2>');
+    </script>
+</body>
+</html>

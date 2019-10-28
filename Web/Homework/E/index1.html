@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        #tbl {
+            width: 700px;
+            table-layout: auto;
+            margin: auto;            
+        }
+
+            #tbl > thead th {
+                background-color: #383838;
+                color: white;
+            }
+
+            #tbl > tbody tr:nth-child(2n+1) {
+                background-color: #bababa;
+            }
+
+        .delayTime {
+            color: red;
+            font-weight: 900;
+        }
+    </style>
+</head>
+<body>
+    <table id="tbl"></table>
+
+    <script src="../../Scripts/jquery-3.4.1.min.js"></script>
+    <script>
+        $.ajax({
+            type: 'get',
+            url: 'MyData.json',
+            format: 'JSON',
+            contentType: 'application/x-www-form-urlencoded; charset=utf-8',
+            success: function (data) {
+                let tbl = $('#tbl');
+                let context;
+                let sex, sexStr="";
+                let status, statusStr="";
+                tbl.append("<thead><tr><th>流水編號</th><th>類型</th><th>性別</th><th>動物狀態</th><th>開放認養時間(起)</th><th>開放認養時間(迄)</th><th>連絡電話</th></tr></thead><tbody>");
+                for (let i = 0; i < data.length; i++) {
+                    context = "";
+
+                    sex = data[i].animal_sex;
+                    if (sex == "M") {
+                        sexStr = '公';
+                    } else if (sex == "F") {
+                        sexStr = '母';
+                    } else {
+                        sexStr = '未輸入';
+                    }
+
+                    status = data[i].animal_status;
+                    if (status == "NONE") {
+                        statusStr = '未公告';
+                    } else if (status == "OPEN") {
+                        statusStr = '開放認養';
+                    } else if (status == "ADOPTED") {
+                        statusStr = '已認養';
+                    } else if (status == "OTHER") {
+                        statusStr = '其他';
+                    } else if (status == "DEAD") {
+                        statusStr = '死亡';
+                    }
+                    context = "<tr><td>" + data[i].animal_id + "</td><td>" + data[i].animal_kind + "</td><td>" + sexStr + "</td><td>" + statusStr + "</td>><td>" + data[i].animal_opendate + "</td><td>" + data[i].animal_closeddate + "</td><td>" + data[i].shelter_tel + "</td></tr>";
+                    tbl.append(context);
+                    tbl.append("</tbody>");
+                }
+            },
+            error: function () {
+                alert('Ajax Fail!!');
+            }
+        });
+    </script>
+</body>
+</html>

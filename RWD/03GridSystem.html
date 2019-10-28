@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        .col1{
+            background-color:aquamarine;
+        }
+        .col2{
+            background-color:brown;
+        }
+        .col3{
+            background-color:cadetblue;
+        }
+        .col4{
+            background-color:chartreuse;
+        }
+        .col5{
+            background-color:cyan;
+        }
+        .col6{
+            background-color:darkgray;
+        }
+        .col7{
+            background-color:darkseagreen;
+        }
+        .col8{
+            background-color:gold;
+        }
+        .col9{
+            background-color:fuchsia;
+        }
+    </style>
+</head>
+<body>
+    <!--bootstrap.css => no-gutters 沒有間隔意思-->
+
+
+    <div class="container">
+        <div class="row">
+            <!--在md斷點的時候排4欄-->
+            <!--在md斷點的時候排8欄：md=media-->
+            <div class="col1 col-md-4">Col1</div>
+            <div class="col2 col-md-8">Col2</div>
+        </div>
+        <div class="row">
+            <div class="col3 col-md-2">Col1</div>
+            <div class="col4 col-md-5">Col2</div>
+            <div class="col5 col-md-5">Col2</div>
+        </div>
+        <div class="row">
+            <div class="col6 col-md-12">Col1</div>
+        </div>
+        <div class="row">
+            <div class="col7 col-md-4">Col1</div>
+            <div class="col8 col-md-4">Col2</div>
+            <div class="col9 col-md-4">Col2</div>
+        </div>
+
+        <hr />
+        <h2>不同斷點效果</h2>
+        <div class="row">
+            <!--無論什麼情況下都是48-->
+            <div class="col1 col-4">Col1</div>
+            <div class="col2 col-8">Col2</div>
+        </div>
+        <div class="row">
+            <!--768px以上，才會255-->
+            <div class="col3 col-md-2">Col1</div>
+            <div class="col4 col-md-5">Col2</div>
+            <div class="col5 col-md-5">Col2</div>
+        </div>
+        <div class="row">
+            <!--lg是992以上，才會66-->
+            <div class="col6 col-lg-6">Col1</div>
+            <div class="col6 col-lg-6">Col1</div>
+        </div>
+        <div class="row">
+            <!--只要大於sm，就會444-->
+            <div class="col7 col-sm-4">Col1</div>
+            <div class="col8 col-sm-4">Col2</div>
+            <div class="col9 col-sm-4">Col2</div>
+        </div>
+    </div>
+</body>
+</html>

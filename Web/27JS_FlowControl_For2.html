@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+    <script>
+        var Rainbow = new Array("紅", "橙", "黃", "綠", "藍", "靛", "紫"); //初始化=鑄造物件
+        var RainbowColor = new Array("Red", "Orange", "Yellow", "Green", "Blue", "Indigo", "Violet");
+
+        //for (var item of Rainbow) {
+        //    document.write(item);
+        //}
+
+        for (i = 0; i < 7; i++) {
+            document.write(Rainbow[i]);
+        }
+
+        document.write("<br/>");
+
+        for (i = 0; i < 7; i++) {
+            document.write(RainbowColor[i]);
+        }
+
+        document.write("<br/>");
+
+        for (i = 0; i < 7; i++) {
+            document.write("<font style='font-size:3rem;color:"+RainbowColor[i]+"'>" + Rainbow[i] + "</font>");
+        }
+
+        document.write("<br/>");
+
+        for (var i in Rainbow) {
+            document.write("<font style='font-size:3rem;color:"+RainbowColor[i]+"'>" + Rainbow[i] + "</font>");
+        }
+    </script>
+</body>
+</html>

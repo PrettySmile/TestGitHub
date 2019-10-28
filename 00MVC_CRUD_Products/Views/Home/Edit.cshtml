@@ -1,0 +1,80 @@
+﻿@model _00MVC_CRUD_Products.Models.tProduct
+
+@{
+    ViewBag.Title = "產品編輯";
+}
+
+    <h2>產品編輯</h2>
+
+
+@*@using (Html.BeginForm())
+{*@
+<form method="post" action="" enctype="multipart/form-data">
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>tProduct</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.fId) @*此畫面沒有產品編號，但送到action執行時需要，所以用隱藏欄位Hidden來放*@
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.fId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @*@Html.EditorFor(model => model.fId, new { htmlAttributes = new { @class = "form-control" } })*@
+                <input id="fId" type="text" name="fId" readonly="readonly" value="@Model.fId" class="form-control"/>
+                @Html.ValidationMessageFor(model => model.fId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.fName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.fName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.fName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.fPrice, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.fPrice, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.fPrice, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.fImg, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input id="fImg" name="fImg" type="file" class="form-control" />
+                @if (Model.fImg=="")
+                {
+                    <h3>原無顯示</h3>
+                }
+                else
+                {
+                    @:原圖<img src="/images/@Model.fImg" width="150" />
+                }
+            <input id="oldImg" name="oldImg"type="hidden" value="@Model.fImg"/>
+                @*@Html.EditorFor(model => model.fImg, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.fImg, "", new { @class = "text-danger" })*@
+            </div>
+        </div>
+        
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+    @*}*@
+</form>
+
+<div>
+    @Html.ActionLink("回產品列表", "Index")
+</div>
+
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

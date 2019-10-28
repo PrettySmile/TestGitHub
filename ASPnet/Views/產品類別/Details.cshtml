@@ -1,0 +1,42 @@
+﻿@model ASPnet.Models.產品類別
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>產品類別</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.類別名稱)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.類別名稱)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.說明)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.說明)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.圖片)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.圖片)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.類別編號 }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <table id="tbl">
+
+    </table>
+
+    <script src="Scripts/jquery-3.4.1.min.js"></script>
+    <script>
+        //$.ajax({
+        //    type: 'get',
+        //    url: 'MyData2.json',
+        //    format: 'json',
+        //    success: function (data) {
+        //        $("#tbl").append("<thead><tr><th>ID</th><th>地點</th><th>顏色</th></tr></thead><tbody>");
+        //        for (let i = 0; i < data.length; i++) {
+        //            $("#tbl").append("<tr><td>"+data[i].animal_id+"</td><td>"+data[i].animal_place+"</td><td>"+data[i].animal_kind+"</td></tr>");
+        //            $("#tbl").append("</tbody>");
+        //        }
+        //    },
+        //    error: function () {
+        //        alert('失敗');
+        //    }
+        //});
+
+        $.ajax({
+            type: 'get',
+            url: 'https://ptx.transportdata.tw/MOTC/v2/Rail/Metro/LiveBoard/KRTC?$top=1&$format=JSON',
+            format: 'json',
+            success: function (data) {
+                $("#tbl").append("<thead><tr><th>紅橘</th><th>方向</th></tr></thead><tbody>");
+                for (let i = 0; i < data.length; i++) {
+                    $("#tbl").append("<tr><td>"+data[i].LineName.Zh_tw+"</td><td>"+data[i].TripHeadSign+"</td></tr>");
+                    $("#tbl").append("</tbody>");
+                }
+            },
+            error: function () {
+                alert('失敗');
+            }
+        });
+    </script>
+</body>
+</html>

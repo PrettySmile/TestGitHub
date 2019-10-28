@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body style="background-color:#67d56d">
+    <h1>Welcome My Homepage!!</h1>
+    <h1 style="background-color:rgb(0,0,0)">Welcome My Homepage!!</h1>
+    <h1 style="background-color:rgba(0,0,0,0.5)">Welcome My Homepage!!</h1>
+    <hr />
+
+    <div style="background-color:brown;width:600px;height:600px;border-radius:70%"></div>
+    <div style="background-color:brown;width:600px;height:600px;border-radius:20%;border:5px dotted #ffd800"></div><!--solid實線的意思-->
+    <div style="background-color:brown;width:200px;height:600px;border-radius:20%;border:5px dotted #ffd800"></div><!--solid實線的意思-->
+    <hr />
+
+    <img src="images/Hydrangeas.jpg" style="opacity:0.3" /><!--圖片刷淡-->
+    <img src="images/Hydrangeas.jpg" style="background-color:rgba(25,19,101,0.3)" /><!--圖片刷淡(沒效果)-->
+    <img src="images/Hydrangeas.jpg" style="background-color:rgb(25,19,101,0.3);opacity:0.3" /><!--圖片刷淡-->
+
+    <h1 style="background-color:rgba(25,19,101,1)">Welcome My Homepage!!</h1>
+    <h1 style="background-color:rgba(25,19,101,0.3)">Welcome My Homepage!!</h1>
+    <h1 style="background-color:rgb(25,19,101,0.3);opacity:0.3">Welcome My Homepage!!</h1>
+
+    <div style="width:600px;height:600px;background-color:blueviolet;border-radius:50%">
+        <img src="images/Hydrangeas.jpg" style="width:inherit;height:inherit;border-radius:inherit" /><!--inherit=繼承父容器的大小-->
+    </div>
+    <div style="width:1500px;height:1000px;background-color:burlywood;background-image:url('images/Hydrangeas.jpg');background-repeat:round">
+        <!--如果div比圖片小，圖會被切掉，因為圖是背景，不是子節點-->
+    </div>
+
+</body>
+</html>

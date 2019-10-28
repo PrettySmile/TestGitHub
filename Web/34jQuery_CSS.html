@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        h1 {
+            background-color: red;
+            color: white;
+            border: 3px solid green;
+            text-align: center;
+            font-size: 36pt;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>歡迎光臨我的網站</h1>
+    <input id="Button1" type="button" value="button" onclick="getHICSS()" />
+    <input id="Button1" type="button" value="button" onclick="getHICSS2()" />
+    <script src="Scripts/jquery-3.4.1.js"></script>
+    <script>
+        //$('h1').addClass('h1');
+        function getHICSS() {
+            $('h1').css({
+                'background-color': 'red',
+                'color': 'white',
+                'border': '3px solid green',
+                'text-align': 'center',
+                'font-size': '36pt'
+            });
+            setTimeout(getHICSS2, 300);
+        }
+
+        function getHICSS2() {
+            $('h1').css({
+                'background-color': 'blue',
+                'color': 'yellow',
+                'border': '10px dotted white',
+                'text-align': 'center',
+                'font-size': '50pt'
+            });
+            setTimeout(getHICSS, 300);
+        }
+    </script>
+
+</body>
+</html>

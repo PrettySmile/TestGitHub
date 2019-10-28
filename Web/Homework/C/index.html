@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="playerStyle.css" rel="stylesheet" />
+</head>
+<body>
+    <audio id="audio"></audio>
+
+    <table>
+        <tbody>
+            <tr>
+                <td>
+                    <div>
+                        <span id="msgNowDuration" class="rem3"></span>
+                        <span class="text"> / </span>
+                        <span id="msgTotalDuration" class="rem2"></span>
+                        <p id="msgLoopStatus"></p>
+                        <marquee id="msgInfo"></marquee>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div id="controlPanel">
+                        <span id="btnPreSound" title="前一首">9</span>
+                        <span id="btnPreTime" title="往前10秒">7</span>
+                        <span id="btnPlay" title="播放">4</span>
+                        <span id="btnPause" title="暫停">;</span>
+                        <span id="btnStop" title="停止"><</span>
+                        <span id="btnNextTime" title="快轉10秒">8</span>
+                        <span id="btnNextSound" title="後一首">:</span>
+                        <span id="btnMute" title="聲音開關">U</span>
+                        <span id="btnOnceLoop" title="單曲循環">q</span>
+                        <span id="btnTotalLoop" title="全部循環">`</span>
+                        <span id="btnRandom" title="隨機播放">s</span>
+                        <span id="btnBook" title="設定歌本">@</span>
+                        <br />
+                        <br />
+                        <input id="btnSoundProgressBar" type="range" min="0"/>
+                        <br />
+                        <input id="btnVolumeSub" type="button" value="-" />
+                        <input id="btnVolumeRange" type="range" />
+                        <input id="btnVolumeAdd" type="button" value="+" />
+                        <input id="txtVolume" type="text" value="5555" onfocus="this.blur();" />
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>
+                        <select id="btnSoundList">
+                        </select>
+                        <table id="book">
+                            <thead>
+                                <tr>
+                                    <td>
+                                        所有歌曲
+                                    </td>
+                                    <td>
+                                        我的歌本
+                                    </td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div id="sBook"></div>
+                                    </td>
+                                    <td>
+                                        <div id="tBook"></div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="2">
+                                        <input id="btnUpdateBook" type="button" value="更新播放清單" />
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <script src="player.js"></script>
+</body>
+</html>

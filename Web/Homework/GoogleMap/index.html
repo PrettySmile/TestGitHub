@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <style>
+        /* Always set the map height explicitly to define the size of the div
+        * element that contains the map. */
+        #map {
+            height: 100%;
+        }
+        /* Optional: Makes the sample page fill the window. */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="map"></div>
+    <script>
+        var geolocation = 'https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyCeXT8HJRAADsUaLFa_CJKmPJsYzWpgnDs';
+        (function () {
+            xhr = new XMLHttpRequest();
+            xhr.open('POST', geolocation);
+            xhr.onload = function () {
+                var response = JSON.parse(this.responseText);
+                console.log(response);
+            }
+            xhr.send();
+        })();
+        var map;
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: { lat: -34.397, lng: 150.644 },
+                zoom: 8
+            });
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCeXT8HJRAADsUaLFa_CJKmPJsYzWpgnDs&callback=initMap"
+            async defer></script>
+
+
+
+    <!--<div id="map"></div>
+    <script>
+        function initMap() {
+            var uluru = { lat: -25.363, lng: 131.044 };
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 4,
+                center: uluru
+            });
+            var marker = new google.maps.Marker({
+                position: uluru,
+                map: map
+            });
+        }
+    </script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCeXT8HJRAADsUaLFa_CJKmPJsYzWpgnDs&callback=initMap">
+    </script>-->
+</body>
+</html>

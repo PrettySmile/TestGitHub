@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        #tbl{
+            width:700px;
+            table-layout:auto;
+            margin:auto;
+        }
+
+        #tbl>thead th{
+            background-color:#383838;
+            color:white;
+        }
+        #tbl>tbody tr:nth-child(2n+1){
+            background-color:#bababa;
+        }
+        .delayTime{
+            color:red;
+            font-weight:900;
+        }
+    </style>
+</head>
+<body>
+    <table id="tbl">
+    </table>
+
+    <script src="../../Scripts/jquery-3.4.1.min.js"></script>
+    <script>        
+        $.ajax({
+            type: 'get',
+            url: 'https://ptx.transportdata.tw/MOTC/v2/Rail/TRA/LiveBoard?$format=JSON',
+            format: 'JSON',
+            success: function (data) {
+                let tbl = $('#tbl');
+                let context="";
+                let tripLine, tripLineStr;
+                let delayTime, delayTimeStr;
+                let direction;
+                tbl.append("<thead><tr><th>站名</th><th>車次</th><th>車種</th><th>山/海線</th><th>到站時間</th><th>發車時間</th><th>誤點時間</th></tr></thead><tbody>");
+                for (let i = 0; i < data.length; i++) {
+                    context = "";
+                    tripLine = data[i].TripLine;
+                    tripLineStr = "";                                        
+                    if (tripLine == 0) {
+                        tripLineStr = "不經山海線";
+                    } else if (tripLine==1) {
+                        tripLineStr = "山線";
+                    } else if (tripLine==2) {
+                        tripLineStr = "海線";
+                    }
+                    direction = data[i].Direction;
+                    if (direction == 0) {
+                        tripLineStr += "(順行)";
+                    } else if (direction == 1) {
+                        tripLineStr += "(逆行)";
+                    }                    
+                    delayTime = data[i].DelayTime;
+                    delayTimeStr = "";
+                    if (delayTime == 0) {
+                        delayTimeStr = "<td>準點</td>";
+                    } else {
+                        delayTimeStr = "<td class='delayTime'>" + delayTime+"分" + "</td>";
+                    }
+
+                    context = "<tr><td>" + data[i].StationName.Zh_tw + "</td><td>" + data[i].TrainNo + "</td><td>" + data[i].TrainTypeName.Zh_tw + "</td><td>" + tripLineStr + "</td>><td>" + data[i].ScheduledArrivalTime + "</td><td>" + data[i].ScheduledDepartureTime + "</td>" + delayTimeStr + "</tr>";
+                    tbl.append(context);                                  
+                    tbl.append("</tbody>");
+                }
+            },
+            error: function () {
+                alert('Ajax Fail!!');
+            }
+        });
+    </script>
+</body>
+</html>

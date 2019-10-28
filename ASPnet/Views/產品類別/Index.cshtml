@@ -1,0 +1,45 @@
+﻿@model IEnumerable<ASPnet.Models.產品類別>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.類別名稱)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.說明)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.圖片)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.類別名稱)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.說明)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.圖片)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.類別編號 }) |
+            @Html.ActionLink("Details", "Details", new { id=item.類別編號 }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.類別編號 })
+        </td>
+    </tr>
+}
+
+</table>
